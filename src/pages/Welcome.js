@@ -1,10 +1,12 @@
 import React from "react";
 
+
 function Welcome(){
 
     return (
-        <div>
-            <h1>Hello World</h1>
+        <div class="welcome">
+            <h1>Project Name</h1>
+            <h2>Slogan Goes Here</h2>
         </div>
     )
 }
