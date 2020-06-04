@@ -2,7 +2,7 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <title>React Todo App</title>
+    <title>My To Dos!</title>
     <link rel="stylesheet" href="css/styles.css" />
     <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
@@ -35,7 +35,7 @@
                 className="cmd"
                 onClick={() => props.deleteTodo(props.todo)}
               >
-                [x]
+                [Finish!]
               </span>
             </li>
           );
@@ -68,7 +68,7 @@
           }
 
           deleteTodo(todo) {
-            if (!confirm("are you sure?")) {
+            if (!confirm("Are you sure?")) {
               return;
             }
 
