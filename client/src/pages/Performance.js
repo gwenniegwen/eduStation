@@ -19,7 +19,6 @@ class Performance extends Component {
 
     }
 }
-}}\
 // class Performance extends React.Component {
 //   constructor() {
 //     super();
