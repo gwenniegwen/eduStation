@@ -7,6 +7,7 @@ import Navbar from "./components/Navbar";
 import Wrapper from "./components/Wrapper";
 import Performance from "./pages/Performance";
 
+
 function App() {
   return (
     <Router>
