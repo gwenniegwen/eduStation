@@ -1,23 +1,14 @@
 import React from "react";
-import Login from "../components/Forms/Login"
 
-function Signup(){
-
-    let isLoggedIn = false
-    
-    return (
-        <div className="container">
-        {isLoggedIn === true ? (
-          <div>
-            <h1>Hello</h1>
-            <button className="btn"> Login In Now </button>
-          </div>
-        ) : (
-          <Login />
-        )}
-      </div>
-    
-    );
+function Signup() {
+  return (
+    <form className="form">
+      <input type="text" placeholder="Username" />
+      <input type="password" placeholder="Password" />
+      <input type="password" placeholder="Confirm Password" />
+      <button type="submit">Register</button>
+    </form>
+  );
 }
 
-export default Signup
+export default Signup;
