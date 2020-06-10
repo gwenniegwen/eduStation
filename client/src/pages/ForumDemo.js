@@ -1,6 +1,6 @@
 import React, {useRef, useState} from "react";
 import openSocket from 'socket.io-client';
-const socket = openSocket('http://localhost:3001');
+const socket = openSocket('https://murmuring-oasis-74308.herokuapp.com/');
 
 function Forum(){
     socket.on('example_message', function(msg){
