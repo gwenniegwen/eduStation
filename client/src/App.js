@@ -8,8 +8,7 @@ import Welcome from './pages/Welcome';
 import Navbar from './components/Navbar';
 import Annoucements from './pages/Annoucements/Annoucements';
 import Posts from './components/Forms/Posts';
-// import Wrapper from './components/Wrapper';
-
+import Forum from './pages/ForumDemo';
 
 function App() {
     return (
@@ -25,7 +24,7 @@ function App() {
                    <Route exact path="/Signup" component={Signup}/>
                    <Route exact path="/Posts" component={Posts}/>
                    <Route exact path="/Annoucements" component={Annoucements}/>
-               
+                   <Route exact path="/Forum" component={Forum}/>
                 </Switch>
                
             </div>
