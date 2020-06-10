@@ -20,7 +20,7 @@
   border-style: solid;
   border-color: tan;
   border-width: 5px;
-  font-family: 'Architects Daughter', cursive;
+  font-family: "Architects Daughter", cursive;
 }
 
 .calendarPage {
@@ -45,7 +45,7 @@ ul {
 
 h1 {
   font-family: "Avenir Next";
-  font-size: 56px;
+  font-size: 30px;
   font-weight: 400;
   color: #0bc8b6;
 }
@@ -58,12 +58,12 @@ h3 {
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 20px;
   margin-top: 8px;
 }
 
 h3 {
-  font-size: 20px;
+  font-size: 15px;
   border-bottom: 1px solid #e1e6ec;
   line-height: 64px;
   margin-bottom: 40px;
@@ -94,6 +94,7 @@ h3 {
 .main {
   max-width: 1040px;
   margin: 0 auto;
+  margin-top: -100px;
   padding: 96px 0;
 }
 
@@ -178,7 +179,7 @@ h3 {
 }
 
 .contact-container {
-  margin-top: 96px;
+  margin-top: 50px;
 }
 
 .contact-form p {
@@ -213,7 +214,7 @@ h3 {
   height: 184px;
 }
 
-.contact-form input[type=submit] {
+.contact-form input[type="submit"] {
   color: #fff;
   width: 184px;
   height: 48px;
@@ -223,7 +224,7 @@ h3 {
   margin-top: 32px;
 }
 
-.contact-form input[type=submit]:hover {
+.contact-form input[type="submit"]:hover {
   cursor: pointer;
 }
 

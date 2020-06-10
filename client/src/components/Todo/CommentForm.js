@@ -13,15 +13,15 @@ class Comment extends React.Component {
   }
 
   render() {
-    let contactForm;
+    let commentForm;
     if (this.state.isSubmitted) {
-      contactForm = (
+      commentForm = (
         <div className='contact-submit-message'>
           Sent!
         </div>
       );
     } else {
-      contactForm = (
+      commentForm = (
         <form onSubmit={() => {this.handleSubmit()}}>
           <p></p>
           <textarea />
@@ -35,11 +35,13 @@ class Comment extends React.Component {
     
     return (
       <div className='contact-form'>
-        {contactForm}
+        {commentForm}
       </div>
     );
   }
 }
+
+
 
 export default Comment;
 
