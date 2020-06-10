@@ -16,11 +16,7 @@ function App() {
                     <Route exact path="/" component={Welcome} />
                     <Route exact path="/Signup" component={Signup} />
                     <Route exact path="/Calendar" component={Calendar} />
-<<<<<<< HEAD
-=======
                     <Route exact path="/Forum" component={Forum}/>
-                    {/* <Calendar /> */}
->>>>>>> cb0cdb621cb16ab32fb4a65d972770c40a85600b
                 </Wrapper>
             </div>
         </Router>
