@@ -17,7 +17,6 @@ function App() {
                     <Route exact path="/Signup" component={Signup} />
                     <Route exact path="/Calendar" component={Calendar} />
                     <Route exact path="/Forum" component={Forum}/>
-                    {/* <Calendar /> */}
                 </Wrapper>
             </div>
         </Router>
