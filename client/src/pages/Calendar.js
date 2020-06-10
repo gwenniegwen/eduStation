@@ -1,36 +1,51 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../index.css'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
+import AddEvent from "../components/Forms/AddEvent"
 
 
-function Calendar(){
+// Previous Event Add attempt not working
+function Calendar() {
+  const [calEvents, setCalEvents] = useState([{ }]);
 
-    return(
-            
-        <FullCalendar 
-        
-        defaultView="dayGridMonth" 
-        plugins={[ dayGridPlugin ]}
+ function addEventToCal(e)
+
+ {
+
+    e.preventDefault()
+    console.log(e)
+  const newEvent = {
+    title: e.target.form[0].value, 
+    date: e.target.form[1].value};
+
+  setCalEvents([
+    ...calEvents, 
+    newEvent
+  ])
+
+
+ }
+  return (
+    <div className="calendarPage">
+    <AddEvent addEventToCal = {addEventToCal}/>
+  <div className="calendar">
+      <FullCalendar
+
+        defaultView="dayGridMonth"
+        header={{
+          left: 'prev,next',
+          center: 'title',
+          right: 'today'
+        }}
+        plugins={[dayGridPlugin]}
         weekends={false}
-        events={[
-          { title: 'event 1', date: '2020-06-02' },
-          { title: 'event 2', date: '2019-06-02' }
-        ]}/>
-        )
+        editable= {true}
+        events= {calEvents}
+        />
+</div>
+    </div>
+  )
 }
-
-// class Calendar extends Component{
-
-//     render(){
-//         return(
-            
-//         <FullCalendar 
-        
-//         defaultView="dayGridMonth" plugins={[ dayGridPlugin ]}/>
-//         )
-//     }
-// }
-
 
 export default Calendar
