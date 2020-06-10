@@ -37,7 +37,7 @@ function Performance() {
           {
             id: state.length * Math.random(),
             name: action.name,
-            /*ask TA*/
+            /*need to ask TA*/
           },
         ];
       case "remove":
@@ -60,8 +60,68 @@ function Performance() {
 
   return (
     <div className="container text-center">
-      <h1>Create a Todo List!</h1>
+      <h1>Performance</h1>
       <form className="form-group mt-5" onSubmit={handleSubmit}>
+        <table className="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Monday</th>
+              <th scope="col">Tuesday</th>
+              <th scope="col">Wednesday</th>
+              <th scope="col">Thursday</th>
+              <th scope="col">Friday</th>
+              <th scope="col">GRADE</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"></th>
+              <input className="form-control" ref={inputRef} />
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+            
+          </tbody>
+        </table>
+        <input
+          className="form-control"
+          ref={inputRef}
+          placeholder="Start typing what you need to do..."
+        />
+        <input
+          className="form-control"
+          ref={inputRef}
+          placeholder="Start typing what you need to do..."
+        />
+        <input
+          className="form-control"
+          ref={inputRef}
+          placeholder="Start typing what you need to do..."
+        />
+        <input
+          className="form-control"
+          ref={inputRef}
+          placeholder="Start typing what you need to do..."
+        />
+        <input
+          className="form-control"
+          ref={inputRef}
+          placeholder="Start typing what you need to do..."
+        />
         <input
           className="form-control"
           ref={inputRef}
