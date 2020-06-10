@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Posts from "../../components/Forms/Posts";
 import Create from "../../components/Forms/Create";
 // import Commentbox from "../../components/Commentbox"
-import "./annoucements.css"
+import "./styles.css"
 
 function Annoucements() {
     const [posts, setPosts] = useState([]);
