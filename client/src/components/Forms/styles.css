@@ -1,4 +1,4 @@
-* {
+/* * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -54,7 +54,7 @@
     border-radius: 3px;
     width: 250px;
     font-size: 18px;
-  }
+  } */
 
   .welcome{
     background: url(../Welcome/schoolbus.gif );
