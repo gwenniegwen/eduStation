@@ -5,6 +5,7 @@ import Signup from './pages/Signup';
 import Welcome from './pages/Welcome';
 import Navbar from './components/Navbar';
 import Wrapper from './components/Wrapper';
+import Forum from './pages/ForumDemo';
 
 function App() {
     return (
@@ -15,6 +16,7 @@ function App() {
                     <Route exact path="/" component={Welcome} />
                     <Route exact path="/Signup" component={Signup} />
                     <Route exact path="/Calendar" component={Calendar} />
+                    <Route exact path="/Forum" component={Forum}/>
                     {/* <Calendar /> */}
                 </Wrapper>
             </div>

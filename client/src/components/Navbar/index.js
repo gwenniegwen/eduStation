@@ -60,6 +60,18 @@ function Navbar() {
               Performance
             </Link>
           </li>
+          <li className="nav-item">
+            <Link
+              to="/Forum"
+              className={
+                window.location.pathname === "/Forum"
+                  ? "nav-link active"
+                  : "nav-link"
+              }
+            >
+              Forum
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>
