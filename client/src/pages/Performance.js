@@ -26,6 +26,7 @@
 // export default Performance;
 
 import React, { useReducer, useRef } from "react";
+import Emoji from "react-emoji-render";
 
 function Performance() {
   const inputRef = useRef();
@@ -62,7 +63,7 @@ function Performance() {
     <div className="container text-center">
       <h1>Performance</h1>
       <form className="form-group mt-5" onSubmit={handleSubmit}>
-        <table className="table table-bordered">
+        <table className="table table-bordered" style={{width:100, marginLeft:170}} >
           <thead>
             <tr>
               <th scope="col"></th>
@@ -78,23 +79,34 @@ function Performance() {
             <tr>
               <th scope="row"></th>
               <input className="form-control" ref={inputRef} />
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
+              <td>
+                <input className="form-control" ref={inputRef} />
+              </td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>
+              <button type="button" class="btn btn-info"></button>
+              </td>
             </tr>
             <tr>
               <th scope="row">2</th>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
             <tr>
               <th scope="row">3</th>
-              <td>Larry</td>
-              <td>the Bird</td>
-              <td>@twitter</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
-            
           </tbody>
         </table>
         <input
@@ -131,7 +143,7 @@ function Performance() {
           Add to List
         </button>
       </form>
-      <h4>My Todo List:</h4>
+      <h4 i class="fa fa-list-ul">>My Todo List:</h4>
       <ul className="list-group">
         {grades.map((grades, index) => (
           <li className="list-group-item" key={grades.id}>
