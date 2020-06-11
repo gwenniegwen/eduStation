@@ -26,7 +26,7 @@
 // export default Performance;
 
 import React, { useReducer, useRef } from "react";
-import Emoji from "react-emoji-render";
+// import Emoji from "react-emoji-render";
 
 function Performance() {
   const inputRef = useRef();
@@ -62,12 +62,17 @@ function Performance() {
   return (
     <div className="container text-center">
       <h1>Performance</h1>
-      <form className="form-group mt-5" onSubmit={handleSubmit}>
-        <table className="table table-bordered" style={{width:100, marginLeft:170}} >
+      <form className="form-group" onSubmit={handleSubmit}>
+        <table
+          className="table table-bordered"
+          style={{ width: 150, marginLeft: 170 }}
+        >
           <thead>
             <tr>
-              <th scope="col"></th>
-              <th scope="col">Monday</th>
+              <th scope="col"> </th>
+              <th scope="col" style={{ width: 150 }}>
+                Monday
+              </th>
               <th scope="col">Tuesday</th>
               <th scope="col">Wednesday</th>
               <th scope="col">Thursday</th>
@@ -77,8 +82,7 @@ function Performance() {
           </thead>
           <tbody>
             <tr>
-              <th scope="row"></th>
-              <input className="form-control" ref={inputRef} />
+              <th scope="row">List 1</th>
               <td>
                 <input className="form-control" ref={inputRef} />
               </td>
@@ -86,12 +90,14 @@ function Performance() {
               <td></td>
               <td></td>
               <td>
-              <button type="button" class="btn btn-info"></button>
+                <button type="button" class="btn btn-info"></button>
               </td>
             </tr>
             <tr>
-              <th scope="row">2</th>
-              <td></td>
+              <th scope="row">List 2</th>
+              <td>
+                <input className="form-control" ref={inputRef} />
+              </td>
               <td></td>
               <td></td>
               <td></td>
@@ -99,8 +105,10 @@ function Performance() {
               <td></td>
             </tr>
             <tr>
-              <th scope="row">3</th>
-              <td></td>
+              <th scope="row">List 3</th>
+              <td>
+                <input className="form-control" ref={inputRef} />
+              </td>
               <td></td>
               <td></td>
               <td></td>
@@ -114,36 +122,14 @@ function Performance() {
           ref={inputRef}
           placeholder="Start typing what you need to do..."
         />
-        <input
-          className="form-control"
-          ref={inputRef}
-          placeholder="Start typing what you need to do..."
-        />
-        <input
-          className="form-control"
-          ref={inputRef}
-          placeholder="Start typing what you need to do..."
-        />
-        <input
-          className="form-control"
-          ref={inputRef}
-          placeholder="Start typing what you need to do..."
-        />
-        <input
-          className="form-control"
-          ref={inputRef}
-          placeholder="Start typing what you need to do..."
-        />
-        <input
-          className="form-control"
-          ref={inputRef}
-          placeholder="Start typing what you need to do..."
-        />
+
         <button className="btn btn-success mt-3 mb-5" type="submit">
           Add to List
         </button>
       </form>
-      <h4 i class="fa fa-list-ul">>My Todo List:</h4>
+      <h4 i class="fa fa-list-ul">
+        >My Todo List:
+      </h4>
       <ul className="list-group">
         {grades.map((grades, index) => (
           <li className="list-group-item" key={grades.id}>
