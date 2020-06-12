@@ -6,7 +6,7 @@ import Signup from './pages/Signup';
 import Welcome from './pages/Welcome';
 
 import Navbar from './components/Navbar';
-import Annoucements from './pages/Annoucements/Annoucements';
+import Annoucements from './pages/Annoucements/index';
 import Posts from './components/Forms/Posts';
 import Forum from './pages/ForumDemo';
 
