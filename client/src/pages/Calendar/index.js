@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import '../index.css'
+import './style.css'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
-import AddEvent from "../components/Forms/AddEvent"
+import AddEvent from "../../components/Forms/AddEvent"
 
 
 // Previous Event Add attempt not working

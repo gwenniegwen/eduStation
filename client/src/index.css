@@ -6,12 +6,35 @@
   color: black;
 }
 
+.welcome-container {
+  padding-top: 50px;
+  background-color: #1daafc;
+  height: 100vh;
+}
+
+.welcome-info {
+  text-align: center;
+}
+
+.main-title {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 75px;
+  color: white;
+}
+
+.sub-title {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 45px;
+  color: white;
+}
+
 .AddEventForm {
   max-width: 300px;
   border-style: solid;
   border-color: darkorange;
   background-color: #fcc959;
   text-align: center;
+  margin-top: 8px;
   margin-bottom: 8px;
 }
 
@@ -24,10 +47,19 @@
 }
 
 .calendarPage {
-  background-color: lightblue;
+  background-color: #3aaafe;
 }
 
 .td {
   background-color: #749877;
 }
 
+.welcome-button {
+  margin-right: 8px;
+  margin-left: 8px;
+  font-family: 'Architects Daughter', cursive;
+}
+
+.welcome-button:hover {
+  background-color: #f1b34b;
+}
