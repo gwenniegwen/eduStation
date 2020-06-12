@@ -17,8 +17,8 @@ function Welcome(){
             <h4 className="sub-title">Let's Learn Together!</h4>
             <div className="row justify-content-md-center">
             <div className="column welcome-button-column">
-            <button type="button" class="btn btn-outline-light sign-up-btn welcome-button">Sign Up</button>
-            <button type="button" class="btn btn-outline-light login-btn welcome-button">Log In</button>
+            <button type="button" className="btn btn-outline-light sign-up-btn welcome-button">Sign Up</button>
+            <button type="button" className="btn btn-outline-light login-btn welcome-button">Log In</button>
             </div>
             </div>
         </div>

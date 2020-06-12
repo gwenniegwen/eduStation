@@ -17,7 +17,9 @@ function Calendar() {
     console.log(e)
   const newEvent = {
     title: e.target.form[0].value, 
-    date: e.target.form[1].value};
+    date: e.target.form[1].value,
+    url: "/"
+  };
 
   setCalEvents([
     ...calEvents, 
@@ -42,6 +44,7 @@ function Calendar() {
         weekends={false}
         editable= {true}
         events= {calEvents}
+        eventClick={e=>{e.jsEvent.preventDefault();if(e.event.url){window.location.replace(e.event.url)}}}
         />
 </div>
     </div>
