@@ -4,7 +4,7 @@ import Calendar from './pages/Calendar'
 import Signin from './pages/Signin';
 import Signup from './pages/Signup';
 import Welcome from './pages/Welcome';
-
+import Performance from './pages/Performance';
 import Navbar from './components/Navbar';
 import Annoucements from './pages/Annoucements/index';
 import Posts from './components/Forms/Posts';
@@ -25,6 +25,7 @@ function App() {
                    <Route exact path="/Posts" component={Posts}/>
                    <Route exact path="/Annoucements" component={Annoucements}/>
                    <Route exact path="/Forum" component={Forum}/>
+                   <Route exact path="/Performance" component={Performance}/>
                 </Switch>
                
             </div>
@@ -33,3 +34,4 @@ function App() {
 }
 
 export default App;
+

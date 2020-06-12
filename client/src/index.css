@@ -20,7 +20,7 @@
   border-style: solid;
   border-color: tan;
   border-width: 5px;
-  font-family: 'Architects Daughter', cursive;
+  font-family: "Architects Daughter", cursive;
 }
 
 .calendarPage {
@@ -30,3 +30,4 @@
 .td {
   background-color: #749877;
 }
+
