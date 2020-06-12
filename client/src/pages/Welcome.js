@@ -1,5 +1,5 @@
 import React from "react";
-import BusGif from '../components/Welcome/schoolbus.gif'
+import BusGif from '../components/Welcome/BusCroppedGif.gif'
 import '../index.css'
 
 

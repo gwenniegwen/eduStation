@@ -9,7 +9,7 @@
 .welcome-container {
   padding-top: 50px;
   background-color: #1daafc;
-  height: 100vh;
+  height: 120vh;
 }
 
 .welcome-info {
@@ -36,6 +36,7 @@
   text-align: center;
   margin-top: 8px;
   margin-bottom: 8px;
+  padding-bottom: 5px;
 }
 
 .calendar {
