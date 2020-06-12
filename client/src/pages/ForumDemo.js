@@ -1,6 +1,15 @@
 import React, {useRef, useState} from "react";
 import openSocket from 'socket.io-client';
-const socket = openSocket('https://murmuring-oasis-74308.herokuapp.com/');
+
+let listenTo = "";
+if (process.env.NODE_ENV === "production") {
+  listenTo = window.location.hostname;
+}
+else{
+  listenTo = "http://localhost:3000/";
+}
+
+const socket = openSocket(listenTo);
 
 function Forum(){
     socket.on('example_message', function(msg){
