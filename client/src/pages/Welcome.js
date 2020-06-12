@@ -1,5 +1,6 @@
 import React from "react";
 import BusGif from '../components/Welcome/schoolbus.gif'
+import '../index.css'
 
 
 
