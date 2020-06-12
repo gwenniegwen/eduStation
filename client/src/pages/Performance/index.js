@@ -104,12 +104,11 @@ function Performance() {
                 <button
                   type="button"
                   onClick={() => {
-                    let gradeBtn = document.getElementById("grade")
+                    let gradeBtn = document.getElementById("grade");
                     console.log("click");
                   }}
                   class="btn btn-info"
                   id="grade"
-                  
                 ></button>
               </td>
             </tr>
