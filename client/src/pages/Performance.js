@@ -65,7 +65,7 @@ function Performance() {
       <form className="form-group" onSubmit={handleSubmit}>
         <table
           className="table table-bordered"
-          style={{ width: 150, marginLeft: 170 }}
+          style={{ marginLeft: 80, marginRight: 170, width: "80%" }}
         >
           <thead>
             <tr>
@@ -73,11 +73,21 @@ function Performance() {
               <th scope="col" style={{ width: 150 }}>
                 Monday
               </th>
-              <th scope="col">Tuesday</th>
-              <th scope="col">Wednesday</th>
-              <th scope="col">Thursday</th>
-              <th scope="col">Friday</th>
-              <th scope="col">GRADE</th>
+              <th scope="col" style={{ width: 150 }}>
+                Tuesday
+              </th>
+              <th scope="col" style={{ width: 150 }}>
+                Wednesday
+              </th>
+              <th scope="col" style={{ width: 150 }}>
+                Thursday
+              </th>
+              <th scope="col" style={{ width: 150 }}>
+                Friday
+              </th>
+              <th scope="col" style={{ width: 150 }}>
+                GRADE
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -89,8 +99,18 @@ function Performance() {
               <td></td>
               <td></td>
               <td></td>
+              <td></td>
               <td>
-                <button type="button" class="btn btn-info"></button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    let gradeBtn = document.getElementById("grade")
+                    console.log("click");
+                  }}
+                  class="btn btn-info"
+                  id="grade"
+                  
+                ></button>
               </td>
             </tr>
             <tr>
