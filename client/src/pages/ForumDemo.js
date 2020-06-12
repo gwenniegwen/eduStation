@@ -6,7 +6,7 @@ if (process.env.NODE_ENV === "production") {
   listenTo = window.location.hostname;
 }
 else{
-  listenTo = "http://localhost:3000/";
+  listenTo = "http://localhost:3001/";
 }
 
 const socket = openSocket(listenTo);
