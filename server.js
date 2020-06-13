@@ -1,4 +1,5 @@
 const express = require("express");
+const mongoose = require("mongoose");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -26,6 +27,10 @@ io.on('connection', function(socket){
     console.log("you got a notification: "+msg );
   })
 });
+// Connect to the Mongo DB
+mongoose.set('useUnifiedTopology', true);
+mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://yechan:Password1!@cluster0-u3bak.mongodb.net/edustation?retryWrites=true&w=majority", { useNewUrlParser: true });
+
 // Define API routes here
 
 // Send every other request to the React app
