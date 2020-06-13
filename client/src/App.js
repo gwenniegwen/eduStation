@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Calendar from './pages/Calendar'
-import Signin from './pages/Signin';
+import Signin from './pages/Signin/index';
 import Signup from './pages/Signup';
 import Welcome from './pages/Welcome';
 import Performance from './pages/Performance';
@@ -14,20 +14,18 @@ function App() {
     return (
         <Router>
             <div>
-            
                 <Navbar />
                 <Switch>
                     <Route exact path="/" component={Welcome} />
                     <Route exact path="/Signin" component={Signin} />
-
                     <Route exact path="/Calendar" component={Calendar} />
-                   <Route exact path="/Signup" component={Signup}/>
-                   <Route exact path="/Posts" component={Posts}/>
-                   <Route exact path="/Annoucements" component={Annoucements}/>
-                   <Route exact path="/Forum" component={Forum}/>
-                   <Route exact path="/Performance" component={Performance}/>
+                    <Route exact path="/Signup" component={Signup} />
+                    <Route exact path="/Posts" component={Posts} />
+                    <Route exact path="/Annoucements" component={Annoucements} />
+                    <Route exact path="/Forum" component={Forum} />
+                    <Route exact path="/Performance" component={Performance} />
                 </Switch>
-               
+
             </div>
         </Router>
     );
