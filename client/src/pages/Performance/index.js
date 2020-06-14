@@ -1,5 +1,5 @@
 import React, { useReducer, useRef } from "react";
-import Emoji from "../../components/Emoji/Emoji"
+import addEmoji from "../../components/Emoji/Emoji";
 // import Emoji from "react-emoji-render";
 
 function Performance() {
@@ -33,44 +33,17 @@ function Performance() {
     inputRef.current.value = "";
   };
 
-
-
-
-
-
-
-  
-
-
-
   function addEmoji(e) {
+    e.preventDefault();
+    console.log(e);
+    const newEvent = {
+      title: e.target.form[0].value,
+      date: e.target.form[1].value,
+      url: "/",
+    };
 
-    e.preventDefault()
-    console.log(e)
-  const newEvent = {
-    title: e.target.form[0].value, 
-    date: e.target.form[1].value,
-    url: "/"
-  };
-
-  setCalEvents([
-    ...calEvents, 
-    newEvent
-  ])
-
- }
-
-
-
-
-
-
-
-
-
-  return (
-    <div className="calendarPage">
-    <AddEvent addEventToCal = {addEventToCal}/>
+    setEmoji([...emoji, newEvent]);
+  }
 
   return (
     <div className="container text-center">
@@ -107,7 +80,7 @@ function Performance() {
             <tr>
               <th scope="row">List 1</th>
               <td>
-                
+                <addEmoji addEmoji={addEmoji} />
               </td>
               <td></td>
               <td></td>

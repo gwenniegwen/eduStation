@@ -11,7 +11,7 @@ const emojiTypeList = [
   "facebook",
 ];
 
-function Emoji() {
+function addEmoji() {
   const [emojiList, setEmojiList] = useState([]);
   const [emojiType, setEmojiType] = useState(null);
 
@@ -64,4 +64,4 @@ function Emoji() {
   );
 }
 
-export default Emoji;
+export default addEmoji;
