@@ -6,7 +6,7 @@ import './style.css'
 function Signin(){
     
     return (
-        <div className="container signinPage">
+        <div className="signin-container">
           <Login />
           <Signup />
       </div>

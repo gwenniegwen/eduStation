@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Calendar from './pages/Calendar'
-import Signin from './pages/Signin/index';
+import Signin from './pages/SignIn/index';
 import Signup from './pages/Signup';
 import Welcome from './pages/Welcome';
 import Performance from './pages/Performance';

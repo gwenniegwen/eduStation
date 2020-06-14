@@ -1,30 +1,35 @@
 import React from "react";
 
-function Signup(prop) {
-    return(
-    <div className="row">
-    <div className="col-md-6 col-md-offset-3">
-      <h2>Sign Up</h2>
-      <form className="signup">
-          <div className="form-group">
-              <label for="exampleInputUsername1">Username</label>
-              <input type="text" className="form-control" id="username-input" placeholder="Username" />
+function Signup() {
+  return (
+    <div className="container">
+      <div className="row justify-content-md-center">
+        <div className="col-md-4 col-md-offset-4">
+          <h2 className="formName">Sign Up</h2>
+          <form className="signupForm col-md-offset-4">
+            <div className="form-text">
+              <div className="form-group">
+                <label for="exampleInputUsername1" className="authlabel">Username</label>
+                <input type="text" className="form-control" id="username-input" placeholder="Username" />
+                <div className="form-group">
+                  <label for="exampleInputEmail1" className="authlabel">Email address</label>
+                  <input type="email" className="form-control" id="email-inputSignup" placeholder="Email" />
+                </div>
+                <div className="form-group">
+                  <label for="exampleInputPassword1" className="authlabel">Password</label>
+                  <input type="password" className="form-control" id="password-inputSignup" placeholder="Password" />
+                </div>
+              </div>
             </div>
-        <div className="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" clasName="form-control" id="email-inputSignup" placeholder="Email" />
+            <div className="button-row justify-content-md-center">
+              <button type="button" className="btn btn-outline-light signup-submit justify-content-md-center">Sign Up</button>
+            </div>
+          </form>
+          <p className="switch-signin">Or log in <a href="/" className="signin-link">here</a></p>
         </div>
-        <div className="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" className="form-control" id="password-inputSignup" placeholder="Password" />
-        </div>
-        <button type="submit" className="btn btn-default">Sign Up</button>
-      </form>
-      <br />
-      <p>Or log in here</p>
+      </div>
     </div>
-  </div>
-    )
-  }
+  )
+}
 
-  export default Signup
+export default Signup

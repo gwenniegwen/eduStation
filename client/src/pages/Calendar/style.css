@@ -2,29 +2,48 @@
 @import "~@fullcalendar/daygrid/main.css";
 
 
-
-.AddEventForm {
-  max-width: 300px;
-  border-style: solid;
-  border-color: darkorange;
-  background-color: #fcc959;
-  text-align: center;
-  margin-top: 8px;
+.addEventForm {
+  max-width: 350px;
+  border-style: double;
+  border-color: white;
+  background-color: #1daafc;
+  /* text-align: left; */
+  padding: 20px;
+  margin-top: 20px;
   margin-bottom: 8px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-radius: 25px;
+}
+
+.addeventrow {
+  text-align: center;
+}
+
+.addEventButton {
+  border-radius: 25px;
+  font-family: 'Architects Daughter', cursive;
+}
+
+.addEventButton:hover {
+  background-color: #f1b34b;
 }
 
 .calendar {
   background-color: #749877;
-  border-style: solid;
-  border-color: tan;
-  border-width: 5px;
   font-family: 'Architects Daughter', cursive;
+  padding: 10px;
 }
 
 .calendarPage {
-  background-color: #3aaafe;
+  background-color: #1daafc;
 }
 
 .td {
   background-color: #749877;
+}
+
+.eventLabel {
+  color: white;
+  font-family: 'Architects Daughter', cursive;
 }
