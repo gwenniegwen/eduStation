@@ -1,6 +1,6 @@
 import React, { useReducer, useRef } from "react";
-// import addEmoji from "../../components/Emoji/Emoji";
-// // import Emoji from "react-emoji-render";
+import AddEmoji from "../../components/Emoji/Emoji";
+
 
 function Performance() {
   const inputRef = useRef();
@@ -79,7 +79,11 @@ function Performance() {
             <tr>
               <th scope="row">List 1</th>
               <td>
-                {/* <addEmoji addEmoji={addEmoji} /> */}
+                <AddEmoji
+                  emoji="thinking_face"
+                  size={64}
+                  onClick={(emoji) => alert(JSON.stringify(emoji))}
+                />
               </td>
               <td></td>
               <td></td>
