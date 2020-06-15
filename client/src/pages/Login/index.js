@@ -8,7 +8,6 @@ function Signin(){
     return (
         <div className="signin-container">
           <Login />
-          <Signup />
       </div>
     );
 }

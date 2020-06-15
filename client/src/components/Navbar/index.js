@@ -6,11 +6,11 @@ import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <Link className="navbar-brand" to="/">
+    <nav className="navbar navbar-expand-lg navbar-dark navmenu">
+      <Link className="navbar-brand navTitle" to="/">
         EduStation
       </Link>
-      <div>
+      <div className="pagelinks">
         <ul className="navbar-nav">
           <li className="nav-item">
             <Link
@@ -27,15 +27,29 @@ function Navbar() {
           </li>
           <li className="nav-item">
             <Link
-              to="/Signin"
+              to="/Login"
+              className={
+                window.location.pathname === "/Login"
+                  ? "nav-link active"
+                  : "nav-link"
+              }
+            >
+              Log In
+            </Link>
+            
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/Signup"
               className={
                 window.location.pathname === "/Signup"
                   ? "nav-link active"
                   : "nav-link"
               }
             >
-              Sign-in
+              Sign Up
             </Link>
+            
           </li>
           <li className="nav-item">
             <Link
@@ -72,6 +86,20 @@ function Navbar() {
             >
               Forum
             </Link>
+
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/"
+              className={
+                window.location.pathname === "/"
+                  ? "nav-link active"
+                  : "nav-link"
+              }
+            >
+              Log Out
+            </Link>
+            
           </li>
         </ul>
       </div>

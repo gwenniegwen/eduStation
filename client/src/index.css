@@ -50,10 +50,19 @@
   background-color: #f1b34b;
 }
 
-
 .busGif {
   width: 100%;
   height: auto;
 }
 
+.navmenu {
+  background-color: #1daafc;
+  color: white;
+  font-size: 24px;
+  font-family: 'Architects Daughter', cursive;
+}
 
+.navTitle {
+  font-size: 30px;
+  text-align: left;
+}

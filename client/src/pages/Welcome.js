@@ -1,11 +1,12 @@
 import React from "react";
+import { useHistory } from 'react-router'
 import BusGif from '../components/Welcome/BusCroppedGif.gif'
 import '../index.css'
 
 
 
 function Welcome(){
-
+    const { push } = useHistory()
 
     return (
         <div className="welcome-container">
@@ -29,8 +30,12 @@ function Welcome(){
             </div>
             <div className="button-row justify-content-md-center">
             <div className="column">
-            <button type="button" className="btn btn-outline-light sign-up-btn welcome-button">Sign Up</button>
-            <button type="button" className="btn btn-outline-light login-btn welcome-button">Log In</button>
+            <button type="button" 
+            onClick={() => push("/Signup")}
+            className="btn btn-outline-light sign-up-btn welcome-button">Sign Up</button>
+            <button type="button" 
+            onClick={() => push("/Login")}
+            className="btn btn-outline-light login-btn welcome-button">Log In</button>
             </div>
             </div>
         </div>
