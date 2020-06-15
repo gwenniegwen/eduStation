@@ -1,6 +1,6 @@
 import React, { useReducer, useRef } from "react";
-import addEmoji from "../../components/Emoji/Emoji";
-// import Emoji from "react-emoji-render";
+// import addEmoji from "../../components/Emoji/Emoji";
+// // import Emoji from "react-emoji-render";
 
 function Performance() {
   const inputRef = useRef();
@@ -12,7 +12,6 @@ function Performance() {
           {
             id: state.length * Math.random(),
             name: action.name,
-            /*need to ask TA*/
           },
         ];
       case "remove":
@@ -33,17 +32,17 @@ function Performance() {
     inputRef.current.value = "";
   };
 
-  function addEmoji(e) {
-    e.preventDefault();
-    console.log(e);
-    const newEvent = {
-      title: e.target.form[0].value,
-      date: e.target.form[1].value,
-      url: "/",
-    };
+  // function addEmoji(e) {
+  //   e.preventDefault();
+  //   console.log(e);
+  //   const newEvent = {
+  //     title: e.target.form[0].value,
+  //     date: e.target.form[1].value,
+  //     url: "/",
+  //   };
 
-    setEmoji([...emoji, newEvent]);
-  }
+  //   setEmoji([...emoji, newEvent]);
+  // }
 
   return (
     <div className="container text-center">
@@ -80,7 +79,7 @@ function Performance() {
             <tr>
               <th scope="row">List 1</th>
               <td>
-                <addEmoji addEmoji={addEmoji} />
+                {/* <addEmoji addEmoji={addEmoji} /> */}
               </td>
               <td></td>
               <td></td>

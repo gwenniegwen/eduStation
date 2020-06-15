@@ -72,6 +72,7 @@ function Navbar() {
             >
               Forum
             </Link>
+          
           </li>
         </ul>
       </div>
