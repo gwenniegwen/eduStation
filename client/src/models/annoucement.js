@@ -4,7 +4,6 @@ const Schema = mongoose.Schema;
 const annoucementSchema = new Schema({
   title: { type: String, required: true },
   content: { type: String, required: true },
-  synopsis: String,
   date: { type: Date, default: Date.now }
 });
 

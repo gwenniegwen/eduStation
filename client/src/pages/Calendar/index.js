@@ -14,19 +14,18 @@ function Calendar() {
  {
 
     e.preventDefault()
-    console.log(e)
+    console.log(e.target.form[2].value)
   const newEvent = {
     title: e.target.form[0].value, 
-    date: e.target.form[1].value,
+    start: e.target.form[1].value,
+    end: e.target.form[2].value,
     url: "/"
   };
-
+  
   setCalEvents([
     ...calEvents, 
     newEvent
   ])
-
-
  }
   return (
     <div className="calendarPage">

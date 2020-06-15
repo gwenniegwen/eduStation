@@ -16,9 +16,17 @@
   text-align: center;
 }
 
+.top-container {
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.form-text {
+  text-align: left;
+}
+
 .main-title {
   font-family: 'Architects Daughter', cursive;
-  font-size: 75px;
+  font-size: 70px;
   color: white;
 }
 
@@ -28,35 +36,29 @@
   color: white;
 }
 
-.AddEventForm {
-  max-width: 300px;
-  border-style: solid;
-  border-color: darkorange;
-  background-color: #fcc959;
-  text-align: center;
-  margin-top: 8px;
-  margin-bottom: 8px;
-}
-
-.calendar {
-  background-color: #749877;
-  border-style: solid;
-  border-color: tan;
-  border-width: 5px;
-  font-family: "Architects Daughter", cursive;
-}
-
-.calendarPage {
-  background-color: #3aaafe;
-}
-
-.td {
-  background-color: #749877;
-}
-
 .welcome-button {
+  text-align: center;
   margin-right: 8px;
   margin-left: 8px;
+  font-family: 'Architects Daughter', cursive;
+  border-radius: 25px;
+  width: 100px;
+  height: 40px;
+}
+
+.welcome-button:hover {
+  background-color: #f1b34b;
+}
+
+.busGif {
+  width: 100%;
+  height: auto;
+}
+
+.navmenu {
+  background-color: #1daafc;
+  color: white;
+  font-size: 24px;
   font-family: 'Architects Daughter', cursive;
 }
 
@@ -91,5 +93,9 @@
   display: flex;
   justify-content: center;
   margin: auto;
-  padding: auto;
+  padding: auto;}
+
+  .navTitle {
+  font-size: 30px;
+  text-align: left;
 }

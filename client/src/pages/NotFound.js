@@ -2,7 +2,7 @@ import React from "react";
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
 
-function NoMatch() {
+function NotFound() {
   return (
     <Container>
       <Row>
@@ -23,4 +23,4 @@ function NoMatch() {
   );
 }
 
-export default NoMatch;
+export default NotFound;
