@@ -6,12 +6,35 @@
   color: black;
 }
 
+.welcome-container {
+  padding-top: 50px;
+  background-color: #1daafc;
+  height: 120vh;
+}
+
+.welcome-info {
+  text-align: center;
+}
+
+.main-title {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 75px;
+  color: white;
+}
+
+.sub-title {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 45px;
+  color: white;
+}
+
 .AddEventForm {
   max-width: 300px;
   border-style: solid;
   border-color: darkorange;
   background-color: #fcc959;
   text-align: center;
+  margin-top: 8px;
   margin-bottom: 8px;
 }
 
@@ -20,15 +43,53 @@
   border-style: solid;
   border-color: tan;
   border-width: 5px;
-  font-family: 'Architects Daughter', cursive;
+  font-family: "Architects Daughter", cursive;
 }
 
 .calendarPage {
-  background-color: lightblue;
+  background-color: #3aaafe;
 }
 
 .td {
   background-color: #749877;
 }
 
+.welcome-button {
+  margin-right: 8px;
+  margin-left: 8px;
+  font-family: 'Architects Daughter', cursive;
+}
 
+.welcome-button:hover {
+  background-color: #f1b34b;
+}
+
+.annoucementPage{
+  background: url(./components/Welcome/DcydbI.jpg) green center center/cover no-repeat;
+  position: relative;
+  height: 100vh;
+ 
+}
+
+.annoucementForm input,
+.annoucementForm textarea {
+  width: 100%;
+  background: #fff;
+  padding: 15px;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  resize: none;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+
+.annoucementH1,
+.annoucementH3 {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: auto;
+}

@@ -1,20 +1,20 @@
 import axios from "axios";
 
 export default {
-  // Gets all posts
-  getPosts: function() {
-    return axios.get("/api/posts");
+  // Gets all annoucements
+  getAnnoucements: function() {
+    return axios.get("/api/annoucement");
   },
-  // Gets the post with the given id
-  getPost: function(id) {
-    return axios.get("/api/posts/" + id);
+  // Gets the annoucement with the given id
+  getAnnoucement: function(id) {
+    return axios.get("/api/annoucement/" + id);
   },
-  // Deletes the post with the given id
-  deletePost: function(id) {
-    return axios.delete("/api/posts/" + id);
+  // Deletes the annoucement with the given id
+  deleteAnnoucement: function(id) {
+    return axios.delete("/api/annoucement/" + id);
   },
-  // Saves a post to the database
-  savePost: function(postData) {
-    return axios.post("/api/posts", postData);
+  // Saves a annoucement to the database
+  saveAnnoucement: function(annoucementData) {
+    return axios.post("/api/annoucement", annoucementData);
   }
 };

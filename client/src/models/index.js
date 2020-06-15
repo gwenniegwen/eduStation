@@ -1,3 +1,3 @@
 module.exports = {
-  Post: require("./post")
+  Annoucement: require("./annoucement")
 };
