@@ -1,5 +1,6 @@
 import React, {useRef, useState} from "react";
 import openSocket from 'socket.io-client';
+import API from "../utils/API";
 
 let listenTo = "";
 if (process.env.NODE_ENV === "production") {
@@ -27,6 +28,17 @@ function Forum(){
         socket.emit('example_message', {body:bodyRef.current.value, author:authorRef.current.value});
     }
 
+    const handleTest = e =>{
+      e.preventDefault();
+      API.savePost({
+        title: "test",
+        body: "test",
+        author: "test"
+      }).then(result => {
+        socket.emit('notification', 'post test');
+      })
+      
+    }
     return (
         <div>
         <h1>Create a blog post</h1>
@@ -37,6 +49,9 @@ function Forum(){
             Save Post
           </button>
         </form>
+        <button className="btn btn-success mt-3 mb-5" onClick={handleTest}>
+            Testing
+          </button>
         {state.map(data => (
             <Hello key={data.id} author={data.author} body={data.body}/>
         ))}
