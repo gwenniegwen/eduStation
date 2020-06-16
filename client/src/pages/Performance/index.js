@@ -1,7 +1,6 @@
 import React, { useReducer, useRef } from "react";
 import AddEmoji from "../../components/Emoji/Emoji";
 
-
 function Performance() {
   const inputRef = useRef();
   const [grades, dispatch] = useReducer((state, action) => {
