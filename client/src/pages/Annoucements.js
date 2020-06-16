@@ -21,7 +21,7 @@ function Annoucements() {
   // Loads all annoucements and sets them to annoucements
   function loadAnnoucements() {
     API.getAnnoucements()
-      .then(res => 
+      .then(res =>
         setAnnoucements(res.data)
       )
       .catch(err => console.log(err));
@@ -37,7 +37,7 @@ function Annoucements() {
   // Handles updating component state when the user types into the input field
   function handleInputChange(event) {
     const { name, value } = event.target;
-    setFormObject({...formObject, [name]: value})
+    setFormObject({ ...formObject, [name]: value })
   };
 
   // When the form is submitted, use the API.saveAnnoucement method to save the annoucement data
@@ -54,11 +54,11 @@ function Annoucements() {
         .catch(err => console.log(err));
     }
 
-    
-  };
 
-    return (
-        <div className="annoucementPage">
+  };
+console.log(annoucements)
+  return (
+    <div className="annoucementPage">
       <Container >
         <Row >
           <Col size="md-6">
@@ -78,8 +78,8 @@ function Annoucements() {
                 placeholder="Write Your Annoucement... (required)"
               />
               <Input
-               name="date"
-              placeholder={new Date ()}
+                name="date"
+                placeholder={new Date()}
               />
               <FormBtn
                 disabled={!(formObject.content && formObject.title)}
@@ -93,13 +93,13 @@ function Annoucements() {
             <Jumbotron>
               <h1>Click Annoucement To View Details</h1>
             </Jumbotron>
-            {annoucements.length ? (
+            {annoucements.length > 0 ? (
               <List>
                 {annoucements.map(annoucement => (
                   <ListItem key={annoucement._id}>
                     <Link to={"/annoucement/" + annoucement._id}>
                       <strong>
-                        {annoucement.title} 
+                        {annoucement.title}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => deleteAnnoucement(annoucement._id)} />
@@ -107,14 +107,14 @@ function Annoucements() {
                 ))}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
-            )}
+                <h3>No Results to Display</h3>
+              )}
           </Col>
         </Row>
       </Container>
-        </div>
-    );
-  }
+    </div>
+  );
+}
 
 
 export default Annoucements;

@@ -1,8 +1,8 @@
 const express = require("express");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
-// const mongoose = require("mongoose");
-// const routes = require("./routes");
+const mongoose = require("mongoose");
+const routes = require("./routes");
 const app = express();
 
 // Define middleware here
@@ -36,7 +36,12 @@ io.on('connection', function(socket){
 app.use(routes);
 
 // Connect to the Mongo DB
-// mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactcms");
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/edustation";
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true, 
+  useFindAndModify: false,
+  useUnifiedTopology: true 
+});
 
 // Send every other request to the React app
 // Define any API routes before this runs

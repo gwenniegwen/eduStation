@@ -20,22 +20,22 @@ function App() {
                 <Switch>
                     <Route exact path="/" component={Welcome} />
                     {/* <Route exact path="/Signin" component={Signin} /> */}
-                    <Route exact path={[ "/annoucements"]}>
-                     <Annoucements />
-                     </Route>
-                     <Route exact path="/annoucements/:id">
-            <Detail />
-          </Route>
-          <Route>
-            <NotFound />
-          </Route>
+                    <Route exact path={["/annoucements"]}>
+                        <Annoucements />
+                    </Route>
+                    <Route exact path="/annoucements/:id">
+                        <Detail />
+                    </Route>
+                    <Route>
+                    </Route>
                     <Route exact path="/Calendar" component={Calendar} />
-                   <Route exact path="/Signup" component={Signup}/>
-              
-                   <Route exact path="/Forum" component={Forum}/>
-                   <Route exact path="/Performance" component={Performance}/>
+                    <Route exact path="/Signup" component={Signup} />
+
+                    <Route exact path="/Forum" component={Forum} />
+                    <Route exact path="/Performance" component={Performance} />
+                    <NotFound />
                 </Switch>
-                
+
             </div>
         </Router>
     );
