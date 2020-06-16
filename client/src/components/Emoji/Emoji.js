@@ -47,7 +47,7 @@ function AddEmoji() {
               objects: 'Objects',
               symbols: 'Symbols',
               flags: 'Flags',
-              custom: 'Cuntom',
+              custom: 'Custom',
             },
           }}
           style={{

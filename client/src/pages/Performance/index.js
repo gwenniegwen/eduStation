@@ -31,18 +31,6 @@ function Performance() {
     inputRef.current.value = "";
   };
 
-  // function addEmoji(e) {
-  //   e.preventDefault();
-  //   console.log(e);
-  //   const newEvent = {
-  //     title: e.target.form[0].value,
-  //     date: e.target.form[1].value,
-  //     url: "/",
-  //   };
-
-  //   setEmoji([...emoji, newEvent]);
-  // }
-
   return (
     <div className="container text-center">
       <h1>Performance</h1>
@@ -68,9 +56,6 @@ function Performance() {
               </th>
               <th scope="col" style={{ width: 150 }}>
                 Friday
-              </th>
-              <th scope="col" style={{ width: 150 }}>
-                GRADE
               </th>
             </tr>
           </thead>
