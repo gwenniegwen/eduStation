@@ -5,7 +5,7 @@ import Calendar from './pages/Calendar'
 // import Login from './pages/Login/index';
 import Signup from './pages/Signup/index';
 import Welcome from './pages/Welcome';
-import Annoucements from "./pages/Annoucements";
+import Announcements from "./pages/Announcements";
 import Detail from "./pages/Detail";
 import NotFound from "./pages/NotFound";
 import Performance from './pages/Performance';
@@ -20,10 +20,10 @@ function App() {
                 <Switch>
                     <Route exact path="/" component={Welcome} />
                     {/* <Route exact path="/Signin" component={Signin} /> */}
-                    <Route exact path={["/annoucements"]}>
-                        <Annoucements />
+                    <Route exact path={["/announcements"]}>
+                        <Announcements />
                     </Route>
-                    <Route exact path="/annoucements/:id">
+                    <Route exact path="/announcements/:id">
                         <Detail />
                     </Route>
                     <Route>

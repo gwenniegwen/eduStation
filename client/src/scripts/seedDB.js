@@ -8,7 +8,7 @@ mongoose.connect(
   "mongodb://localhost/reactreadinglist"
 );
 
-const annoucementSeed = [
+const announcementSeed = [
   {
     key: 1,
     id: "1",
@@ -50,9 +50,9 @@ const annoucementSeed = [
 
 ];
 
-db.Annoucement
+db.Announcement
   .remove({})
-  .then(() => db.Annoucement.collection.insertMany(annoucementSeed))
+  .then(() => db.Announcement.collection.insertMany(announcementSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);

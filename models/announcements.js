@@ -1,4 +1,4 @@
-const annoucementItems = [
+const announcementItems = [
     {
       key: 1,
       title: "Pop Quiz",
@@ -30,5 +30,5 @@ const annoucementItems = [
     }
   ];
   
-  export default annoucementItems;
+  export default announcementItems;
   

@@ -1,3 +1,3 @@
 module.exports = {
-  Annoucement: require("./annoucement")
+  Announcement: require("./announcement")
 };
