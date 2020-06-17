@@ -63,16 +63,8 @@ function Performance() {
             <tr>
               <th scope="row">List 1</th>
               <td>
-                <AddEmoji
-                  emoji="thinking_face"
-                  size={64}
-                  onClick={(emoji) => alert(JSON.stringify(emoji))}
-                />
+                <AddEmoji onClick={(emoji) => alert(JSON.stringify(emoji))} />
               </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
               <td>
                 <button
                   type="button"
@@ -84,6 +76,9 @@ function Performance() {
                   id="grade"
                 ></button>
               </td>
+              <td></td>
+              <td></td>
+              <td></td>
             </tr>
             <tr>
               <th scope="row">List 2</th>

@@ -1,22 +1,23 @@
-import React, { useState } from 'react';
-import { Emoji, Picker } from 'emoji-mart';
-import 'emoji-mart/css/emoji-mart.css';
+import React, { useState } from "react";
+import { Emoji, Picker } from "emoji-mart";
+import "emoji-mart/css/emoji-mart.css";
 
 const emojiTypeList = [
-  'apple',
-  'google',
-
+  "apple",
 ];
+
 
 function AddEmoji() {
   const [emojiList, setEmojiList] = useState([]);
   const [emojiType, setEmojiType] = useState(null);
 
-  const onClickButton = e => {
+  const onClickButton = (e) => {
+    console.log(e.target.name);
     setEmojiType(e.target.name);
   };
+  
 
-  const onSelect = emoji => {
+  const onSelect = (emoji) => {
     console.log({ emoji });
     setEmojiList([...emojiList, emoji]);
     setEmojiType(null);
@@ -24,35 +25,35 @@ function AddEmoji() {
   return (
     <>
       <p>
-        {emojiTypeList.map(name => (
+        {emojiTypeList.map((name) => (
           <button onClick={onClickButton} name={name} key={name}>
-            {name}
+            Emoji
           </button>
         ))}
       </p>
       {emojiType && (
         <Picker
-          onSelect={emoji => onSelect({ ...emoji, emojiType })}
+          onSelect={(emoji) => onSelect({ ...emoji, emojiType })}
           set={emojiType}
           i18n={{
-            search: 'Search',
+            search: "Search",
             categories: {
-              search: 'Result',
-              recent: 'Frequently Used',
-              people: 'People',
-              nature: 'Nature',
-              foods: 'Foods',
-              activity: 'Activity',
-              places: 'Places',
-              objects: 'Objects',
-              symbols: 'Symbols',
-              flags: 'Flags',
-              custom: 'Custom',
+              search: "Result",
+              recent: "Frequently Used",
+              people: "People",
+              nature: "Nature",
+              foods: "Foods",
+              activity: "Activity",
+              places: "Places",
+              objects: "Objects",
+              symbols: "Symbols",
+              flags: "Flags",
+              custom: "Custom",
             },
           }}
           style={{
-            position: 'absolute',
-            zIndex: '1',
+            position: "absolute",
+            zIndex: "1",
           }}
         />
       )}
@@ -62,7 +63,7 @@ function AddEmoji() {
               emoji={id}
               size={32}
               set={emojiType}
-              onClick={emoji => onSelect({ ...emoji, emojiType })}
+              onClick={(emoji) => onSelect({ ...emoji, emojiType })}
               key={i}
             />
           ))
