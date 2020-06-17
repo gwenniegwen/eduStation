@@ -24,10 +24,7 @@ function AddEmoji() {
     <>
       <p>
         {emojiTypeList.map((name) => (
-          <button onClick={onClickButton} name={name} key={name} >
-            
-            Emoji
-            
+          <button onClick={onClickButton} name={name} key={name} i class="far fa-smile">  
           </button>
         ))}
       </p>

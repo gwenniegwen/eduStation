@@ -33,7 +33,11 @@ function Performance() {
 
   return (
     <div className="container text-center">
-      <h1>Performance</h1>
+      <div>
+        <h1>Performance</h1>
+        <h2>in this week!</h2>
+        </div>
+
       <form className="form-group" onSubmit={handleSubmit}>
         <table
           className="table table-bordered"
@@ -41,7 +45,6 @@ function Performance() {
         >
           <thead>
             <tr>
-              <th scope="col"> </th>
               <th scope="col" style={{ width: 150 }}>
                 Monday
               </th>
@@ -61,7 +64,7 @@ function Performance() {
           </thead>
           <tbody>
             <tr>
-              <th scope="row">List 1</th>
+              {/* <th scope="row"></th> */}
               <td>
                 <AddEmoji onClick={(emoji) => alert(JSON.stringify(emoji))} />
               </td>
@@ -80,26 +83,7 @@ function Performance() {
               <td></td>
               <td></td>
             </tr>
-            <tr>
-              <th scope="row">List 2</th>
-              <td>
-                <input className="form-control" ref={inputRef} />
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th scope="row">List 3</th>
-              <td>
-                <input className="form-control" ref={inputRef} />
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
+            
           </tbody>
         </table>
         <input
@@ -111,14 +95,13 @@ function Performance() {
         <button
           className="btn btn-success mt-3 mb-5"
           type="submit"
-          i
-          class="far fa-smile"
+          i class="fa fa-list-ul"
         >
           Add to List
         </button>
       </form>
-      <h4 i class="fa fa-list-ul">
-        >My Todo List:
+      <h4>
+          My Todo List:
       </h4>
       <ul className="list-group">
         {grades.map((grades, index) => (
