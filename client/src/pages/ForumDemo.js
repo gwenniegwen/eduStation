@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useRef, useState, useEffect} from "react";
 import openSocket from 'socket.io-client';
 import API from "../utils/API";
 
@@ -14,7 +14,7 @@ const socket = openSocket(listenTo);
 
 function Forum(){
     socket.on('example_message', function(msg){
-        setState([...state, {id:Math.floor(Math.random()*1000), author:msg.author, body:msg.body}]);
+        setState([...state, {_id:Math.floor(Math.random()*1000), title:msg.title, content:msg.content}]);
         bodyRef.current.value ="";
         authorRef.current.value ="";
         socket.emit('notification', "posted");
@@ -22,18 +22,18 @@ function Forum(){
 
     const bodyRef = useRef();
     const authorRef = useRef();
+
     const [state, setState] = useState([]);
     const handleSubmit = e =>{
         e.preventDefault();
-        socket.emit('example_message', {body:bodyRef.current.value, author:authorRef.current.value});
+        socket.emit('example_message', {content:bodyRef.current.value, title:authorRef.current.value});
     }
 
     const handleTest = e =>{
       e.preventDefault();
-      API.savePost({
+      API.saveAnnouncement({
         title: "test",
-        body: "test",
-        author: "test"
+        content: "test",
       }).then(result => {
         socket.emit('notification', 'post test');
       })
@@ -41,10 +41,9 @@ function Forum(){
 
     const handleGetTest = e =>{
       e.preventDefault();
-      API.getPosts()
+      API.getAnnouncements()
       .then(result =>{
-        setState(result.data);
-        console.log(state);
+        setState([...state,...result.data]);
       });
     }
 
@@ -65,7 +64,7 @@ function Forum(){
             Testing
           </button>
         {state.map(data => (
-            <Hello key={data.id} author={data.author} body={data.body}/>
+            <Hello key={data._id} author={data.title} body={data.content}/>
         ))}
       </div>
     )

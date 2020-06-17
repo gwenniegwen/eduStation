@@ -62,7 +62,40 @@
   font-family: 'Architects Daughter', cursive;
 }
 
-.navTitle {
+.welcome-button:hover {
+  background-color: #f1b34b;
+}
+
+.announcementPage{
+  background: url(./components/Welcome/DcydbI.jpg) green center center/cover no-repeat;
+  position: relative;
+  height: 100vh;
+ 
+}
+
+.announcementForm input,
+.announcementForm textarea {
+  width: 100%;
+  background: #fff;
+  padding: 15px;
+  border: none;
+  padding: 4px;
+  outline: none;
+  font-size: 1.2em;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  resize: none;
+  border-radius: 7px;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
+}
+
+.announcementH1,
+.announcementH3 {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  padding: auto;}
+
+  .navTitle {
   font-size: 30px;
   text-align: left;
 }

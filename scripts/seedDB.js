@@ -6,32 +6,41 @@ const db = require("../models");
 mongoose.set('useUnifiedTopology', true);
 mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://yechan:Password1!@cluster0-u3bak.mongodb.net/edustation?retryWrites=true&w=majority", { useNewUrlParser: true });
 
-const bookSeed = [
+
+const announcementSeed = [
   {
-    title: "Hello World",
-    author: "admin",
-    body:
-      "Welcome to your first post! To create posts create a title and body. Don't forget to include your screen name!",
+    title: "Pop Quiz",
+    content: "Reminder we will be having a pop quiz on chapter 11 of your text book",
     date: new Date(Date.now())
   },
   {
-    title: "The Second Post",
-    author: "admin",
-    body:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    title: "Stay Safe",
+    content:
+      "To My Favorite Students: Stay Safe --> Practice Social Distancing",
     date: new Date(Date.now())
   },
   {
-    title: "Another One",
-    author: "admin",
-    body:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    title: "Field Trip",
+    content:
+      "Our Field Trip will take place in a few weeks, remember to get your permission slips signed",
     date: new Date(Date.now())
-  }
+  },
+  {
+    title: "Homework Due",
+    content:
+      "Your Homework titled,'why did the chicken cross the road' is due in two weeks",
+    date: new Date(Date.now())
+  },
+  {
+    title: "Surprise",
+    content: "COVID19 is over and school is back in session, report to class tomorrow at 8am",
+    date: new Date(Date.now())
+  },
+
 ];
 
-db.Post.deleteMany({})
-  .then(() => db.Post.collection.insertMany(bookSeed))
+db.Announcement.deleteMany({})
+  .then(() => db.Announcement.collection.insertMany(announcementSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
@@ -40,3 +49,4 @@ db.Post.deleteMany({})
     console.error(err);
     process.exit(1);
   });
+  

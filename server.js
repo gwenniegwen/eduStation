@@ -13,6 +13,9 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
+
+
 //Socket.io
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);

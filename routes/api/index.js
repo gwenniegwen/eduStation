@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const postRoutes = require("./posts");
+const announcementRoutes = require("./announcements");
 
-// Post routes
-router.use("/posts", postRoutes);
+//Announcement routes
+router.use("/announcements", announcementRoutes);
 
 module.exports = router;
