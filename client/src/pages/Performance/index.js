@@ -26,6 +26,7 @@
 // export default Performance;
 
 import React, { useReducer, useRef } from "react";
+import "./style.css"
 // import Emoji from "react-emoji-render";
 
 function Performance() {

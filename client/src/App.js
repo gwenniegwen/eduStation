@@ -1,13 +1,15 @@
 import React from 'react';
+
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Calendar from './pages/Calendar'
 import Login from './pages/Login/index';
 import Signup from './pages/Signup/index';
 import Welcome from './pages/Welcome';
+import Announcements from "./pages/Announcements";
+import Detail from "./pages/Detail";
+import NotFound from "./pages/NotFound";
 import Performance from './pages/Performance';
 import Navbar from './components/Navbar';
-import Annoucements from './pages/Annoucements/index';
-import Posts from './components/Forms/Posts';
 import Forum from './pages/ForumDemo';
 
 function App() {
@@ -20,10 +22,16 @@ function App() {
                     <Route exact path="/Login" component={Login} />
                     <Route exact path="/Calendar" component={Calendar} />
                     <Route exact path="/Signup" component={Signup} />
-                    <Route exact path="/Posts" component={Posts} />
-                    <Route exact path="/Annoucements" component={Annoucements} />
+                    {/* <Route exact path="/Posts" component={Posts} /> */}
                     <Route exact path="/Forum" component={Forum} />
                     <Route exact path="/Performance" component={Performance} />
+                    <Route exact path="/announcements">
+                        <Announcements />
+                    </Route>
+                    <Route exact path="/announcements/:id">
+                        <Detail />
+                    </Route>
+                    <NotFound />
                 </Switch>
 
             </div>
