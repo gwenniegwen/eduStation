@@ -1,4 +1,6 @@
 const express = require("express");
+const mongoose = require("mongoose");
+const routes = require("./routes");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -11,6 +13,9 @@ app.use(express.json());
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
+
+
 //Socket.io
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
@@ -26,7 +31,12 @@ io.on('connection', function(socket){
     console.log("you got a notification: "+msg );
   })
 });
+// Connect to the Mongo DB
+mongoose.set('useUnifiedTopology', true);
+mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://yechan:Password1!@cluster0-u3bak.mongodb.net/edustation?retryWrites=true&w=majority", { useNewUrlParser: true });
+
 // Define API routes here
+app.use(routes);
 
 // Send every other request to the React app
 // Define any API routes before this runs

@@ -65,6 +65,18 @@ function Navbar() {
           </li>
           <li className="nav-item">
             <Link
+              to="/announcements"
+              className={
+                window.location.pathname === "/announcements"
+                  ? "nav-link active"
+                  : "nav-link"
+              }
+            >
+              Announcements
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
               to="/Performance"
               className={
                 window.location.pathname === "/Performance"

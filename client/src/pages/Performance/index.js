@@ -1,5 +1,10 @@
 import React, { useReducer, useRef } from "react";
+<<<<<<< HEAD
 import AddEmoji from "../../components/Emoji/Emoji";
+=======
+import "./style.css"
+// import Emoji from "react-emoji-render";
+>>>>>>> 3ef1891df7821b8fa0205e366d44744239d56e96
 
 function Performance() {
   const inputRef = useRef();
