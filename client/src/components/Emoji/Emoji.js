@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import { Emoji, Picker } from "emoji-mart";
 import "emoji-mart/css/emoji-mart.css";
 
-const emojiTypeList = [
-  "apple",
-];
-
+const emojiTypeList = ["apple"];
 
 function AddEmoji() {
   const [emojiList, setEmojiList] = useState([]);
@@ -15,19 +12,22 @@ function AddEmoji() {
     console.log(e.target.name);
     setEmojiType(e.target.name);
   };
-  
 
   const onSelect = (emoji) => {
     console.log({ emoji });
     setEmojiList([...emojiList, emoji]);
     setEmojiType(null);
   };
+
+ 
   return (
     <>
       <p>
         {emojiTypeList.map((name) => (
-          <button onClick={onClickButton} name={name} key={name}>
+          <button onClick={onClickButton} name={name} key={name} >
+            
             Emoji
+            
           </button>
         ))}
       </p>

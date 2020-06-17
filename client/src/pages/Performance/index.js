@@ -89,14 +89,12 @@ function Performance() {
               <td></td>
               <td></td>
               <td></td>
-              <td></td>
             </tr>
             <tr>
               <th scope="row">List 3</th>
               <td>
                 <input className="form-control" ref={inputRef} />
               </td>
-              <td></td>
               <td></td>
               <td></td>
               <td></td>
@@ -110,7 +108,12 @@ function Performance() {
           placeholder="Start typing what you need to do..."
         />
 
-        <button className="btn btn-success mt-3 mb-5" type="submit">
+        <button
+          className="btn btn-success mt-3 mb-5"
+          type="submit"
+          i
+          class="far fa-smile"
+        >
           Add to List
         </button>
       </form>

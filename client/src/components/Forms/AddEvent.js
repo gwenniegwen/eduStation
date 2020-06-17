@@ -39,14 +39,6 @@ function AddEvent({ addEventToCal }) {
                   placeholder="YYYY-MM-DD"
                 />
               </div>
-              <div className="form-group">
-                <label htmlFor="labelEventDate" className="eventLabel">
-                  TestEmoji
-                </label>
-                
-                <AddEmoji onClick={(emoji) => alert(JSON.stringify(emoji))} />
-               
-              </div>
             </div>
             <div className="button-row addeventrow justify-content-md-center">
               <button
