@@ -54,7 +54,7 @@ function Announcements() {
 
 
   };
-console.log(announcements)
+ 
   return (
     <div className="announcementPage">
       <Container >
@@ -72,10 +72,11 @@ console.log(announcements)
               />
               <TextArea
                 onChange={handleInputChange}
-                name="Content"
+                name="content"
                 placeholder="Write Your Announcement... (required)"
               />
               <Input
+              disabled
                 name="date"
                 placeholder={new Date()}
               />

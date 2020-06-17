@@ -35,6 +35,7 @@ io.on('connection', function(socket){
 // Define API routes here
 app.use(routes);
 
+
 // Connect to the Mongo DB
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/edustation";
 mongoose.connect(MONGODB_URI, {
