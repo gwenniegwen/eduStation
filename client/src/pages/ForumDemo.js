@@ -37,8 +37,17 @@ function Forum(){
       }).then(result => {
         socket.emit('notification', 'post test');
       })
-      
     }
+
+    const handleGetTest = e =>{
+      e.preventDefault();
+      API.getPosts()
+      .then(result =>{
+        setState(result.data);
+        console.log(state);
+      });
+    }
+
     return (
         <div>
         <h1>Create a blog post</h1>
@@ -50,6 +59,9 @@ function Forum(){
           </button>
         </form>
         <button className="btn btn-success mt-3 mb-5" onClick={handleTest}>
+            Testing
+          </button>
+          <button className="btn btn-success mt-3 mb-5" onClick={handleGetTest}>
             Testing
           </button>
         {state.map(data => (
