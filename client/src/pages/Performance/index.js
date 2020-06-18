@@ -1,10 +1,7 @@
 import React, { useReducer, useRef } from "react";
-<<<<<<< HEAD
 import AddEmoji from "../../components/Emoji/Emoji";
-=======
 import "./style.css"
 // import Emoji from "react-emoji-render";
->>>>>>> 3ef1891df7821b8fa0205e366d44744239d56e96
 
 function Performance() {
   const inputRef = useRef();
@@ -43,7 +40,7 @@ function Performance() {
         <h2>in this week!</h2>
         </div>
 
-      <form className="form-group" onSubmit={handleSubmit}>
+      
         <table
           className="table table-bordered"
           style={{ marginLeft: 80, marginRight: 170, width: "80%" }}
@@ -71,34 +68,50 @@ function Performance() {
             <tr>
               {/* <th scope="row"></th> */}
               <td>
-                <AddEmoji onClick={(emoji) => alert(JSON.stringify(emoji))} />
+                <AddEmoji 
+                class="btn btn-info"
+                onClick={(emoji) => alert(JSON.stringify(emoji))} />
               </td>
               <td>
-                <button
-                  type="button"
-                  onClick={() => {
-                    let gradeBtn = document.getElementById("grade");
-                    console.log("click");
-                  }}
-                  class="btn btn-info"
-                  id="grade"
-                ></button>
+              <AddEmoji 
+                class="btn btn-info"
+                onClick={(emoji) => alert(JSON.stringify(emoji))} />
               </td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td>
+              <AddEmoji 
+                class="btn btn-info"
+                onClick={(emoji) => alert(JSON.stringify(emoji))} />
+              </td>
+              <td>
+              <AddEmoji 
+                class="btn btn-info"
+                onClick={(emoji) => alert(JSON.stringify(emoji))} />
+              </td>
+              <td>
+              <AddEmoji 
+                class="btn btn-info"
+                onClick={(emoji) => alert(JSON.stringify(emoji))} />
+              </td>
             </tr>
             
           </tbody>
         </table>
+
+        <div>
+          <h2></h2>
+        </div>
+        <form className="form-group" 
+        style={{ marginLeft: 80, marginRight: 170, width: "80%" }}
+        onSubmit={handleSubmit}>
         <input
           className="form-control"
           ref={inputRef}
-          placeholder="Start typing what you need to do..."
+          placeholder="Start typing what you need to do!"
         />
 
         <button
-          className="btn btn-success mt-3 mb-5"
+          // className="btn btn-success mt-3 mb-5"
+          className="btn btn-outline-light justify-content-md-center"
           type="submit"
           i class="fa fa-list-ul"
         >

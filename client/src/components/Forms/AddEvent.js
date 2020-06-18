@@ -1,5 +1,5 @@
 import React from "react";
-import AddEmoji from "../../components/Emoji/Emoji";
+
 
 function AddEvent({ addEventToCal }) {
   return (

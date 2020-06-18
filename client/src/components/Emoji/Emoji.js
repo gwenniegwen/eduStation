@@ -38,14 +38,12 @@ function AddEmoji() {
               search: "Result",
               recent: "Frequently Used",
               people: "People",
-              nature: "Nature",
               foods: "Foods",
               activity: "Activity",
               places: "Places",
               objects: "Objects",
               symbols: "Symbols",
               flags: "Flags",
-              custom: "Custom",
             },
           }}
           style={{

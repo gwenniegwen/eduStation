@@ -4,6 +4,7 @@ body {
     padding: 0;
     font-family: "Avenir Next";
     min-width: 1280px;
+    background-color: #1daafc;
   }
   
   ul {
@@ -271,7 +272,7 @@ body {
       transform: rotate(360deg);
     }
   }
-  
+   
   
   /* --------------------------------------------------------------------------- */
   
