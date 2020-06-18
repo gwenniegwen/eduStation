@@ -111,7 +111,7 @@ function Performance() {
 
         <button
           // className="btn btn-success mt-3 mb-5"
-          className="btn btn-outline-light justify-content-md-center"
+          className="btn btn-outline-light justify-content-md-center addEventButton"
           type="submit"
           i class="fa fa-list-ul"
         >
