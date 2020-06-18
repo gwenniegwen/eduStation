@@ -1,6 +1,7 @@
 import React, { useReducer, useRef } from "react";
 import AddEmoji from "../../components/Emoji/Emoji";
 import "./style.css"
+import "../Calendar/style.css"
 // import Emoji from "react-emoji-render";
 
 function Performance() {
@@ -113,7 +114,6 @@ function Performance() {
           // className="btn btn-success mt-3 mb-5"
           className="btn btn-outline-light justify-content-md-center addEventButton"
           type="submit"
-          i class="fa fa-list-ul"
         >
           Add to List
         </button>
@@ -123,10 +123,12 @@ function Performance() {
       </h4>
       <ul className="list-group">
         {grades.map((grades, index) => (
-          <li className="list-group-item" key={grades.id}>
+          <li className="list-group-item"
+          style={{ marginLeft: 80, marginRight: 170, width: "80%" }}
+          key={grades.id}>
             {grades.name}
             <button
-              className="btn btn-danger ml-5"
+              className="btn btn-outline-light justify-content-md-center addEventButton"
               onClick={() => dispatch({ type: "remove", index })}
             >
               X Remove
