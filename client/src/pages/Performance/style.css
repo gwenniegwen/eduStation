@@ -274,8 +274,15 @@ body {
   }
    .table {
      background-color: white;
+     border-radius: 3px;
+     border-color: none;
    }
    .addEventButton {
+    border-radius: 25px;
+    font-family: 'Architects Daughter', cursive;
+    margin-top: 20px;
+  }
+   .addEventButtonRemove {
     border-radius: 25px;
     font-family: 'Architects Daughter', cursive;
   }
@@ -283,8 +290,14 @@ body {
   .addEventButton:hover {
     background-color: #f1b34b;
   }
+  .addEventButtonRemove:hover {
+    background-color: #f1b34b;
+  }
 
   .btn btn-info {
+    background-color: #f1b34b;
+  }
+  .btnEmoji btn-info:hover{
     background-color: #f1b34b;
   }
   /* --------------------------------------------------------------------------- */

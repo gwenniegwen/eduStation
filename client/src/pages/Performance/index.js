@@ -44,7 +44,7 @@ function Performance() {
       
         <table
           className="table table-bordered"
-          style={{ marginLeft: 80, marginRight: 170, width: "80%" }}
+          style={{ marginLeft: 80, marginRight: 170, width: "80%"}}
         >
           <thead>
             <tr>
@@ -70,7 +70,7 @@ function Performance() {
               {/* <th scope="row"></th> */}
               <td>
                 <AddEmoji 
-                class="btn btn-info"
+                className="btn btn-info"
                 onClick={(emoji) => alert(JSON.stringify(emoji))} />
               </td>
               <td>
@@ -107,7 +107,7 @@ function Performance() {
         <input
           className="form-control"
           ref={inputRef}
-          placeholder="Start typing what you need to do!"
+          placeholder="Share how your kids done this week!"
         />
 
         <button
@@ -115,11 +115,11 @@ function Performance() {
           className="btn btn-outline-light justify-content-md-center addEventButton"
           type="submit"
         >
-          Add to List
+          Share with the teacher!
         </button>
       </form>
       <h4>
-          My Todo List:
+          Post:
       </h4>
       <ul className="list-group">
         {grades.map((grades, index) => (
@@ -128,8 +128,9 @@ function Performance() {
           key={grades.id}>
             {grades.name}
             <button
-              className="btn btn-outline-light justify-content-md-center addEventButton"
+              className="btn btn-outline-light justify-content-md-center addEventButtonRemove"
               onClick={() => dispatch({ type: "remove", index })}
+              style={{ marginLeft: 170, width: "20%" }}
             >
               X Remove
             </button>
