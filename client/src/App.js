@@ -22,7 +22,7 @@ function App() {
                     <Route exact path="/Login" component={Login} />
                     <Route exact path="/Calendar" component={Calendar} />
                     <Route exact path="/Signup" component={Signup} />
-                    {/* <Route exact path="/Posts" component={Posts} /> */}
+                
                     <Route exact path="/Forum" component={Forum} />
                     <Route exact path="/Performance" component={Performance} />
                     <Route exact path="/announcements">

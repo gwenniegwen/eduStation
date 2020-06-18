@@ -37,6 +37,8 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://yechan:Password1!@clu
 
 // Define API routes here
 app.use(routes);
+app.use('/api/users', require ('./routes/api/users'));
+app.use('/api/auth', require('./routes/api/auth'));
 
 // Send every other request to the React app
 // Define any API routes before this runs
