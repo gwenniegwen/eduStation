@@ -17,7 +17,7 @@ function Navbar() {
               to="/"
               className={
                 window.location.pathname === "/" ||
-                window.location.pathname === "/Welcome"
+                window.location.pathname === "/welcome"
                   ? "nav-link active"
                   : "nav-link"
               }
@@ -27,35 +27,9 @@ function Navbar() {
           </li>
           <li className="nav-item">
             <Link
-              to="/Login"
+              to="/calendar"
               className={
-                window.location.pathname === "/Login"
-                  ? "nav-link active"
-                  : "nav-link"
-              }
-            >
-              Log In
-            </Link>
-            
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/Signup"
-              className={
-                window.location.pathname === "/Signup"
-                  ? "nav-link active"
-                  : "nav-link"
-              }
-            >
-              Sign Up
-            </Link>
-            
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/Calendar"
-              className={
-                window.location.pathname === "/Calendar"
+                window.location.pathname === "/calendar"
                   ? "nav-link active"
                   : "nav-link"
               }
@@ -77,9 +51,9 @@ function Navbar() {
           </li>
           <li className="nav-item">
             <Link
-              to="/Performance"
+              to="/performance"
               className={
-                window.location.pathname === "/Performance"
+                window.location.pathname === "/performance"
                   ? "nav-link active"
                   : "nav-link"
               }
@@ -89,9 +63,9 @@ function Navbar() {
           </li>
           <li className="nav-item">
             <Link
-              to="/Forum"
+              to="/forum"
               className={
-                window.location.pathname === "/Forum"
+                window.location.pathname === "/forum"
                   ? "nav-link active"
                   : "nav-link"
               }
