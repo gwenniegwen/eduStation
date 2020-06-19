@@ -1,34 +1,15 @@
-// import React from "react";
-// import Comment from "../components/Todo/CommentForm";
-
-// class Performance extends React.Component {
-
-//   render() {
-
-//     return (
-//       <div className='main-wrapper'>
-//         <div className='main'>
-//           <div className='copy-container'>
-//             <h1>Performance.</h1>
-//             <h2>From your teacher!</h2>
-//           </div>
-
-//           <div className='contact-container'>
-//             <h3>Comment</h3>
-//             <Comment />
-//           </div>
-//         </div>
-//       </div>
-//     );
-//   }
-// }
-
-// export default Performance;
-
 import React, { useReducer, useRef } from "react";
-import "./style.css"
+import AddEmoji from "../../components/Emoji/Emoji";
+import "./style.css";
+import "../Calendar/style.css";
+// import Calendar from "../Calendar/index.js";
 // import Emoji from "react-emoji-render";
 
+
+//pass the emoji from Emoji component to dispatch on line 44 in Performance
+//pass grades as a prop into Calendar compnent
+
+//once in your calendar component, add state for grades
 function Performance() {
   const inputRef = useRef();
   const [grades, dispatch] = useReducer((state, action) => {
@@ -39,7 +20,6 @@ function Performance() {
           {
             id: state.length * Math.random(),
             name: action.name,
-            /*need to ask TA*/
           },
         ];
       case "remove":
@@ -50,6 +30,16 @@ function Performance() {
         return state;
     }
   }, []);
+
+  if (!grades) {
+    console.log("no grade");
+  } else {
+    console.log("this", grades);
+  }
+
+  //<Calendar  grades />
+  // const today = new Date();
+  // console.log(today.getFullYear() + "/" +  today.getMonth() + 1 + "/"+ today.getDate()  + "/" + today.getDay());
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -62,100 +52,105 @@ function Performance() {
 
   return (
     <div className="container text-center">
-      <h1>Performance</h1>
-      <form className="form-group" onSubmit={handleSubmit}>
-        <table
-          className="table table-bordered"
-          style={{ marginLeft: 80, marginRight: 170, width: "80%" }}
-        >
-          <thead>
-            <tr>
-              <th scope="col"> </th>
-              <th scope="col" style={{ width: 150 }}>
-                Monday
-              </th>
-              <th scope="col" style={{ width: 150 }}>
-                Tuesday
-              </th>
-              <th scope="col" style={{ width: 150 }}>
-                Wednesday
-              </th>
-              <th scope="col" style={{ width: 150 }}>
-                Thursday
-              </th>
-              <th scope="col" style={{ width: 150 }}>
-                Friday
-              </th>
-              <th scope="col" style={{ width: 150 }}>
-                GRADE
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row">List 1</th>
-              <td>
-                <input className="form-control" ref={inputRef} />
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <button
-                  type="button"
-                  onClick={() => {
-                    let gradeBtn = document.getElementById("grade");
-                    console.log("click");
-                  }}
-                  class="btn btn-info"
-                  id="grade"
-                ></button>
-              </td>
-            </tr>
-            <tr>
-              <th scope="row">List 2</th>
-              <td>
-                <input className="form-control" ref={inputRef} />
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th scope="row">List 3</th>
-              <td>
-                <input className="form-control" ref={inputRef} />
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-            </tr>
-          </tbody>
-        </table>
+      <div>
+        <h1>Performance</h1>
+        <h2>in this week!</h2>
+        {/* <h2>{ today }</h2> */}
+      </div>
+
+      <table
+        className="table table-bordered"
+        style={{ marginLeft: 80, marginRight: 170, width: "80%" }}
+      >
+        <thead>
+          <tr>
+            <th scope="col" style={{ width: 150 }}>
+              Monday
+            </th>
+            <th scope="col" style={{ width: 150 }}>
+              Tuesday
+            </th>
+            <th scope="col" style={{ width: 150 }}>
+              Wednesday
+            </th>
+            <th scope="col" style={{ width: 150 }}>
+              Thursday
+            </th>
+            <th scope="col" style={{ width: 150 }}>
+              Friday
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            {/* <th scope="row"></th> */}
+            <td>
+              <AddEmoji
+                className="btn btn-info"
+                onClick={(emoji) => alert(JSON.stringify(emoji))}
+              />
+            </td>
+            <td>
+              <AddEmoji
+                class="btn btn-info"
+                onClick={(emoji) => alert(JSON.stringify(emoji))}
+              />
+            </td>
+            <td>
+              <AddEmoji
+                class="btn btn-info"
+                onClick={(emoji) => alert(JSON.stringify(emoji))}
+              />
+            </td>
+            <td>
+              <AddEmoji
+                class="btn btn-info"
+                onClick={(emoji) => alert(JSON.stringify(emoji))}
+              />
+            </td>
+            <td>
+              <AddEmoji
+                class="btn btn-info"
+                onClick={(emoji) => alert(JSON.stringify(emoji))}
+              />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div>
+        <h2></h2>
+      </div>
+      <form
+        className="form-group"
+        style={{ marginLeft: 80, marginRight: 170, width: "80%" }}
+        onSubmit={handleSubmit}
+      >
         <input
           className="form-control"
           ref={inputRef}
-          placeholder="Start typing what you need to do..."
+          placeholder="Share how your kids done this week!"
         />
 
-        <button className="btn btn-success mt-3 mb-5" type="submit">
-          Add to List
+        <button
+          // className="btn btn-success mt-3 mb-5"
+          className="btn btn-outline-light justify-content-md-center addEventButton"
+          type="submit"
+        >
+          Share with the teacher!
         </button>
       </form>
-      <h4 i class="fa fa-list-ul">
-        >My Todo List:
-      </h4>
+      <h4>Post:</h4>
       <ul className="list-group">
         {grades.map((grades, index) => (
-          <li className="list-group-item" key={grades.id}>
+          <li
+            className="list-group-item"
+            style={{ marginLeft: 80, marginRight: 170, width: "80%" }}
+            key={grades.id}
+          >
             {grades.name}
             <button
-              className="btn btn-danger ml-5"
+              className="btn btn-outline-light justify-content-md-center addEventButtonRemove"
               onClick={() => dispatch({ type: "remove", index })}
             >
               X Remove

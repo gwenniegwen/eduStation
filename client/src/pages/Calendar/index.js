@@ -80,9 +80,9 @@ function Calendar() {
         events= {calEvents}
         eventClick={e=>{e.jsEvent.preventDefault();if(e.event.url){window.location.replace(e.event.url)}}}
         />
-</div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Calendar
+export default Calendar;
