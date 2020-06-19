@@ -99,3 +99,10 @@
   font-size: 30px;
   text-align: left;
 }
+
+.commentForm{
+  padding-top: 1em;
+}
+.commentForm .btn{
+  width: 100%;
+}

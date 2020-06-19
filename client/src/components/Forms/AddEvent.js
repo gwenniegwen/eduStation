@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-function AddEvent({ addEventToCal }) {
+function AddEvent({ addEventToCal , eventRef, startRef, endRef}) {
 
     return (
         <div className="container top-container">
@@ -12,15 +12,15 @@ function AddEvent({ addEventToCal }) {
                         <div className="form-text">
                             <div className="form-group">
                                 <label htmlFor="labelEventName" className="eventLabel">Event Name</label>
-                                <input type="text" className="form-control eventForm" placeholder="Enter Event" />
+                                <input type="text" className="form-control eventForm" required ref={eventRef} placeholder="Enter Event" />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="labelEventDate" className="eventLabel">Event Start</label>
-                                <input type="text" className="form-control dateForm" placeholder="YYYY-MM-DD" />
+                                <input type="text" className="form-control dateForm" required ref={startRef} placeholder="YYYY-MM-DD" />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="labelEventDate" className="eventLabel">Event End (leave blank for single day)</label>
-                                <input type="text" className="form-control dateForm" placeholder="YYYY-MM-DD" />
+                                <input type="text" className="form-control dateForm" ref={endRef} placeholder="YYYY-MM-DD" />
                             </div>
                         </div>
                         <div className="button-row addeventrow justify-content-md-center">
