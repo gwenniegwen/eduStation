@@ -2,8 +2,9 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: "Avenir Next";
+    font-family: 'Architects Daughter', cursive;
     min-width: 1280px;
+    background-color: #1daafc;
   }
   
   ul {
@@ -11,15 +12,15 @@ body {
   }
   
   h1 {
-    font-family: "Avenir Next";
+    font-family: 'Architects Daughter', cursive;
     font-size: 30px;
     font-weight: 400;
-    color: #0bc8b6;
+    color: white;
   }
   
   h2,
   h3 {
-    font-family: "Lato";
+    font-family: 'Architects Daughter', cursive;;
     color: #2b546a;
     font-weight: 300;
   }
@@ -271,7 +272,33 @@ body {
       transform: rotate(360deg);
     }
   }
-  
-  
+   .table {
+     background-color: white;
+     border-radius: 3px;
+     border-color: none;
+   }
+   .addEventButton {
+    border-radius: 25px;
+    font-family: 'Architects Daughter', cursive;
+    margin-top: 20px;
+  }
+   .addEventButtonRemove {
+    border-radius: 25px;
+    font-family: 'Architects Daughter', cursive;
+  }
+
+  .addEventButton:hover {
+    background-color: #f1b34b;
+  }
+  .addEventButtonRemove:hover {
+    background-color: #f1b34b;
+  }
+
+  .btn btn-info {
+    background-color: #f1b34b;
+  }
+  .btnEmoji btn-info:hover{
+    background-color: #f1b34b;
+  }
   /* --------------------------------------------------------------------------- */
   

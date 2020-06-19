@@ -8,8 +8,8 @@ import API from '../../utils/API'
 
 // Previous Event Add attempt not working
 function Calendar() {
-  const [calEvents, setCalEvents] = useState([{ }]);
-
+  const [calEvents, setCalEvents] =useState([{}]);
+  
   useEffect(() => {
     loadEventToCal();
   }, []);
@@ -64,9 +64,9 @@ function Calendar() {
         events= {calEvents}
         eventClick={e=>{e.jsEvent.preventDefault();if(e.event.url){window.location.replace(e.event.url)}}}
         />
-</div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Calendar
+export default Calendar;
