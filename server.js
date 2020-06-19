@@ -29,12 +29,18 @@ io.on('connection', function(socket){
   });
   socket.on('notification',function(msg){
     console.log("you got a notification: "+msg );
+  });
+  socket.on('join', function(room){
+    socket.join(room);
+    console.log("joined a room: "+room);
+  });
+  socket.on('reload',function(room){
+    socket.to(room).emit('reload','reload');
   })
 });
 // Connect to the Mongo DB
 mongoose.set('useUnifiedTopology', true);
-// mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://yechan:Password1!@cluster0-u3bak.mongodb.net/edustation?retryWrites=true&w=majority", { useNewUrlParser: true });
-mongoose.connect('mongodb://localhost:27017/myapp', {useNewUrlParser: true});
+mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://yechan:Password1!@cluster0-u3bak.mongodb.net/edustation?retryWrites=true&w=majority", { useNewUrlParser: true });
 
 // Define API routes here
 app.use(routes);
