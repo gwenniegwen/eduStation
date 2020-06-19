@@ -1,31 +1,43 @@
-import React, { useState } from "react";
-import "./style.css";
-import FullCalendar from "@fullcalendar/react";
-import dayGridPlugin from "@fullcalendar/daygrid";
-import AddEvent from "../../components/Forms/AddEvent";
+import React, { useState, useEffect } from 'react'
+import './style.css'
+import FullCalendar from '@fullcalendar/react'
+import dayGridPlugin from '@fullcalendar/daygrid'
+import AddEvent from "../../components/Forms/AddEvent"
+import API from '../../utils/API'
+
 
 // Previous Event Add attempt not working
 function Calendar() {
 
-  console.log(this.props)
-  const [calEvents, setCalEvents] = useState([{}]);
+  useEffect(() => {
+    loadEventToCal();
+  }, []);
 
-  function addEventToCal(e) {
+ function addEventToCal(e){
     e.preventDefault();
-    console.log(e.target.form[2].value);
-    const newEvent = {
-      title: e.target.form[0].value,
+    API.saveCalendar({
+      title: e.target.form[0].value, 
       start: e.target.form[1].value,
       end: e.target.form[2].value,
-      // emoji: this.props.grades,
-      url: "/",
-      //add emoji key-value pair
-    };
-
-    console.log(e.target.form[3].value);
-
-    setCalEvents([...calEvents, newEvent]);
+    })
+    .then(res=>{ 
+      loadEventToCal();
+    })
+    .catch(err => console.log(err));
   }
+  function loadEventToCal(){
+    API.getCalendars()
+    .then(res=>{
+      setCalEvents(res.data.map(event=> ({
+        title: event.title,
+        start: event.start,
+        end: event.end,
+        url: "/calendar/"+event._id
+      })))
+    })
+    .catch(err=>console.log(err));
+  }
+
   return (
     <div className="calendarPage">
       <AddEvent addEventToCal={addEventToCal} />
