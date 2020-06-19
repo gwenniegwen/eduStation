@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Calendar from './pages/Calendar'
+// import Calendar from './pages/Calendar'
 import Login from './pages/Login/index';
 import Signup from './pages/Signup/index';
 import Welcome from './pages/Welcome';
@@ -21,7 +21,7 @@ function App() {
                 <Switch>
                     <Route exact path="/" component={Welcome} />
                     <Route exact path="/login" component={Login} />
-                    <Route exact path="/calendar" component={Calendar} />
+                    {/* <Route exact path="/calendar" component={Calendar} /> */}
                     <Route exact path="/signup" component={Signup} />
                     <Route exact path="/forum" component={Forum} />
                     <Route exact path="/performance" component={Performance} />
@@ -31,9 +31,9 @@ function App() {
                     <Route exact path="/announcements/:id">
                         <Detail where="announcements"/>
                     </Route>
-                    <Route exact path="/calendar/:id">
+                    {/* <Route exact path="/calendar/:id">
                         <Detail where="calendar"/>
-                    </Route>
+                    </Route> */}
                     <NotFound />
                 </Switch>
 

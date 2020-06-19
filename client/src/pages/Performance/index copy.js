@@ -5,47 +5,12 @@ import "../Calendar/style.css";
 // import Calendar from "../Calendar/index.js";
 // import Emoji from "react-emoji-render";
 
+
 //pass the emoji from Emoji component to dispatch on line 44 in Performance
 //pass grades as a prop into Calendar compnent
 
 //once in your calendar component, add state for grades
-const mockData = [
-  {
-    day: "Monday",
-    emojis: [
-      {
-        emoji: {
-          colons: ":+1:",
-          emojiType: "apple",
-          emoticons: [],
-          id: "+1",
-          name: "Thumbs Up Sign",
-          native: "👍",
-          short_names: ["+1", "thumbsup"],
-          skin: 1,
-          unified: "1f44d",
-        },
-      },
-      {
-        emoji: {
-          colons: ":trophy:",
-          emojiType: "apple",
-          emoticons: [],
-          id: "trophy",
-          name: "Trophy",
-          native: "🏆",
-          short_names: ["trophy"],
-          skin: null,
-          unified: "1f3c6",
-        },
-      },
-    ],
-  },
-];
-
 function Performance() {
-  // const [announcements, setAnnouncements] = useState([])
-
   const inputRef = useRef();
   const [grades, dispatch] = useReducer((state, action) => {
     switch (action.type) {
@@ -121,8 +86,6 @@ function Performance() {
             {/* <th scope="row"></th> */}
             <td>
               <AddEmoji
-                emojiData={mockData}
-                weekDay="Monday"
                 className="btn btn-info"
                 onClick={(emoji) => alert(JSON.stringify(emoji))}
               />
