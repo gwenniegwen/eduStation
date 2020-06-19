@@ -100,9 +100,73 @@
   text-align: left;
 }
 
-.commentForm{
+.detailPost  { 
+max-width: 600px;
+border-style: double;
+border-color: white;
+background-color: #1daafc;
+color: white;
+font-size: 15px;
+font-family: 'Architects Daughter', cursive;
+/* text-align: left; */
+padding: 20px;
+margin-top: 20px;
+margin-bottom: 8px;
+padding-top: 10px;
+padding-bottom: 10px;
+border-radius: 25px;
+}
+
+.return-to-announcements {
+font-size: 20px;
+color: #f1b34b;
+
+}
+
+
+
+
+
+.detail-container {
+  padding-top: 50px;
+  background-color: #1daafc;
+  color: white;
+  height: 130vh;
+}
+
+.content-title {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 60px;
+  max-width: 500px;
+  color: white;
+}
+
+.content-details {
+  max-width: 600px;
+
+  /* font-family: 'Architects Daughter', cursive;
+  font-size: 20px;
+  color: white; */
+}
+
+.content-text {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 20px;
+  color: white;
+  border-style: double;
+border-color: white;
+padding-top: 10px;
+margin-bottom: 8px;
+padding-bottom: 10px;
+padding-left: 5px;
+padding-right: 5px;
+border-radius: 25px
+}
+
+.commentForm {
   padding-top: 1em;
 }
+
 .commentForm .btn{
   width: 100%;
 }

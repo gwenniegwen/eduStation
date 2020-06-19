@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import Jumbotron from "../components/Jumbotron";
+import DetailPost from "../components/DetailPost"
 import API from "../utils/API";
 import "../index.css";
 
@@ -51,29 +52,27 @@ function Detail(props) {
   }
 
   return (
-      <Container fluid>
-        <Row>
-          <Col size="md-12">
-            <Jumbotron>
-              <h1>
+    <div className="detail-container">
+              <div className="container detail-info">
+        <div className="row justify-content-md-center">
+        <div className="col-md-4 col-md-offset-4">
+              <h1 className="content-title">
                 {content.title} 
               </h1>
-            </Jumbotron>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-10 md-offset-1">
-            <article>
-              <h1>Content</h1>
-              <p>
+          </div>
+        </div>
+        <div className="row justify-content-md-center">
+          <div className="column content-details">
+              <p className="content-text">
                 {content.content}
               </p>
-            </article>
-          </Col>
-        </Row>
+          </div>
+        </div>
+        <DetailPost />
+        <DetailPost />
         <Row>
           <Col size="md-2">
-            <Link to={"/"+props.where}>← Back to {props.where}</Link>
+            <Link className="return-to-announcements" to={"/"+props.where}>← Back to {props.where}</Link>
           </Col>
         </Row>
         <Row>
@@ -83,7 +82,7 @@ function Detail(props) {
                 onChange={handleInputChange}
                 name="user"
                 placeholder="Name"
-              />
+                />
               <TextArea
                 onChange={handleInputChange}
                 name="content"
@@ -91,7 +90,7 @@ function Detail(props) {
               />
               <FormBtn comment="true"
                 onClick={handleFormSubmit}
-              >
+                >
                 Comment
               </FormBtn>
             </form>
@@ -102,7 +101,9 @@ function Detail(props) {
             ))}
           </Col>
         </Row>
-      </Container>
+                </div>
+                </div>
+  
     );
   }
   function Hello(props){
