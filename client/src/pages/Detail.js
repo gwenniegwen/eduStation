@@ -7,10 +7,19 @@ import API from "../utils/API";
 import "../index.css";
 
 function Detail(props) {
-  const [content, setContent] = useState({})
+  const [content, setContent] = useState({});
+  const [comments, setComments]=useState([]);
+  const [formObject, setFormObject] = useState({});
+
   // When this component mounts, grab the book with the _id of props.match.params.id
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
-  const {id} = useParams()
+  const {id} = useParams();
+
+  function handleInputChange(event) {
+    const { name, value } = event.target;
+    setFormObject({ ...formObject, [name]: value });
+  };
+
   useEffect(() => {
     if(props.where === "announcements") {
       API.getAnnouncement(id)
@@ -21,9 +30,24 @@ function Detail(props) {
       .then(res => setContent(res.data))
       .catch(err => console.log(err));
     };
-  }, [])
+    loadComments();
+  }, []);
+
+  function loadComments(){
+    API.getComments(id)
+    .then(res => setComments(res.data))
+    .catch(err=>console.log(err));
+    console.log(comments);
+  }
+
   function handleFormSubmit(e){
     e.preventDefault();
+    console.log(comments);
+    API.saveComment({
+      user: formObject.user,
+      content: formObject.content,
+      postID: id
+    }).then(res => console.log(res));
   }
 
   return (
@@ -56,24 +80,40 @@ function Detail(props) {
           <Col size="2">
           <form className="commentForm">
               <Input
-                name="username"
+                onChange={handleInputChange}
+                name="user"
                 placeholder="Name"
               />
               <TextArea
+                onChange={handleInputChange}
                 name="content"
                 placeholder="Write what you think!"
               />
-              <FormBtn comment
+              <FormBtn comment="true"
                 onClick={handleFormSubmit}
               >
                 Comment
               </FormBtn>
             </form>
           </Col>
+          <Col size="8">
+            {comments.map(data=>(
+              <Hello key={data._id} user={data.user} content={data.content} date={data.date}></Hello>
+            ))}
+          </Col>
         </Row>
       </Container>
     );
   }
+  function Hello(props){
+    return(
+    <div style={{color:"black"}}>
+        <p>{props.user}</p>
+        <p>{props.content}</p>
+        <p>{props.date}</p>
+    </div>
+        );
+}
 
 
 export default Detail;
