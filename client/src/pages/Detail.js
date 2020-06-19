@@ -38,17 +38,15 @@ function Detail(props) {
     API.getComments(id)
     .then(res => setComments(res.data))
     .catch(err=>console.log(err));
-    console.log(comments);
   }
 
   function handleFormSubmit(e){
     e.preventDefault();
-    console.log(comments);
     API.saveComment({
       user: formObject.user,
       content: formObject.content,
       postID: id
-    }).then(res => console.log(res));
+    }).then(res => loadComments());
   }
 
   return (
@@ -68,8 +66,9 @@ function Detail(props) {
               </p>
           </div>
         </div>
-        <DetailPost />
-        <DetailPost />
+        {comments.map(data =>(
+          <DetailPost user={data.user} content={data.content} date={data.date}/>
+        ))}
         <Row>
           <Col size="md-2">
             <Link className="return-to-announcements" to={"/"+props.where}>← Back to {props.where}</Link>
@@ -95,26 +94,12 @@ function Detail(props) {
               </FormBtn>
             </form>
           </Col>
-          <Col size="8">
-            {comments.map(data=>(
-              <Hello key={data._id} user={data.user} content={data.content} date={data.date}></Hello>
-            ))}
-          </Col>
         </Row>
                 </div>
                 </div>
   
     );
   }
-  function Hello(props){
-    return(
-    <div style={{color:"black"}}>
-        <p>{props.user}</p>
-        <p>{props.content}</p>
-        <p>{props.date}</p>
-    </div>
-        );
-}
 
 
 export default Detail;
