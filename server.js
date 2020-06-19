@@ -33,8 +33,8 @@ io.on('connection', function(socket){
 });
 // Connect to the Mongo DB
 mongoose.set('useUnifiedTopology', true);
-mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://yechan:Password1!@cluster0-u3bak.mongodb.net/edustation?retryWrites=true&w=majority", { useNewUrlParser: true });
-// mongoose.connect('mongodb://localhost:27017/myapp', {useNewUrlParser: true});
+// mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://yechan:Password1!@cluster0-u3bak.mongodb.net/edustation?retryWrites=true&w=majority", { useNewUrlParser: true });
+mongoose.connect('mongodb://localhost:27017/myapp', {useNewUrlParser: true});
 
 // Define API routes here
 app.use(routes);
