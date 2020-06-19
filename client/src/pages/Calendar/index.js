@@ -6,6 +6,8 @@ import AddEvent from "../../components/Forms/AddEvent";
 
 // Previous Event Add attempt not working
 function Calendar() {
+
+  console.log(this.props)
   const [calEvents, setCalEvents] = useState([{}]);
 
   function addEventToCal(e) {
@@ -15,7 +17,7 @@ function Calendar() {
       title: e.target.form[0].value,
       start: e.target.form[1].value,
       end: e.target.form[2].value,
-      emoji: e.target.form[3].value,
+      // emoji: this.props.grades,
       url: "/",
       //add emoji key-value pair
     };

@@ -39,6 +39,16 @@ function AddEvent({ addEventToCal }) {
                   placeholder="YYYY-MM-DD"
                 />
               </div>
+              <div className="form-group">
+                <label htmlFor="labelEventDate" className="eventLabel">
+                  test Emoji
+                </label>
+                <input
+                  type="text"
+                  className="form-control dateForm"
+                  placeholder="YYYY-MM-DD"
+                />
+              </div>
             </div>
             <div className="button-row addeventrow justify-content-md-center">
               <button
