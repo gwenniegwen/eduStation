@@ -29,6 +29,13 @@ io.on('connection', function(socket){
   });
   socket.on('notification',function(msg){
     console.log("you got a notification: "+msg );
+  });
+  socket.on('join', function(room){
+    socket.join(room);
+    console.log("joined a room: "+room);
+  });
+  socket.on('reload',function(room){
+    socket.to(room).emit('reload','reload');
   })
 });
 // Connect to the Mongo DB

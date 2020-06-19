@@ -3,8 +3,19 @@ import { useParams } from "react-router-dom";
 import { useHistory } from 'react-router'
 import DetailPost from "../components/DetailPost"
 import CommentForm from "../components/Forms/CommentForm"
+import openSocket from 'socket.io-client';
 import API from "../utils/API";
 import "../index.css";
+
+let listenTo = "";
+if (process.env.NODE_ENV === "production") {
+  listenTo = window.location.hostname;
+}
+else{
+  listenTo = "http://localhost:3001/";
+}
+
+const socket = openSocket(listenTo);
 
 function Detail(props) {
   const [content, setContent] = useState({});
@@ -15,6 +26,10 @@ function Detail(props) {
   const {id} = useParams();
   const nameRef = useRef();
   const commentRef = useRef();
+
+  socket.on('reload', function(msg){
+    loadComments();
+  });
 
   useEffect(() => {
     if(props.where === "announcements") {
@@ -27,6 +42,7 @@ function Detail(props) {
       .catch(err => console.log(err));
     };
     loadComments();
+    socket.emit('join', id);
   }, []);
 
   function loadComments(){
@@ -45,6 +61,7 @@ function Detail(props) {
       loadComments();
       nameRef.current.value="";
       commentRef.current.value="";
+      socket.emit('reload',id);
     });
   }
 
