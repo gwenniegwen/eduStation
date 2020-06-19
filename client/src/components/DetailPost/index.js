@@ -4,13 +4,16 @@ import React from 'react'
 function DetailPost({user, content, date}) {
 
     return (
-        <div className="row row justify-content-md-center">
-        <div className="col-md-4 col-md-offset-8">
+        <div className="row justify-content-md-center">
+        <div className="col-md-4 col-md-offset-4">
 
-        <div className="detailPost">
-        <div className="detailPostUsername">{user}</div><br />
-        <div className="detailPostDate">{date}</div><br />
-        <div className="detailPostContent">{content} </div>
+        <div className="detailPost content-text">
+        <div className="row">
+        <div className="col">
+        <div className="detailPostUsername detailText">{user}</div></div>
+        <div className="col">
+        <div className="detailPostDate detailText">{date}</div></div></div><hr className="postBreak"/>
+        <div className="detailPostContent detailText">{content}</div>
         </div>
         </div>
         </div>
