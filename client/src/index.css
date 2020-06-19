@@ -100,10 +100,14 @@
   text-align: left;
 }
 
-.userPost  { max-width: 350px;
+.detailPost  { 
+max-width: 600px;
 border-style: double;
 border-color: white;
 background-color: #1daafc;
+color: white;
+font-size: 15px;
+font-family: 'Architects Daughter', cursive;
 /* text-align: left; */
 padding: 20px;
 margin-top: 20px;
@@ -156,10 +160,13 @@ margin-bottom: 8px;
 padding-bottom: 10px;
 padding-left: 5px;
 padding-right: 5px;
-border-radius: 25px;
-.commentForm{
+border-radius: 25px
+}
+
+.commentForm {
   padding-top: 1em;
 }
+
 .commentForm .btn{
   width: 100%;
 }

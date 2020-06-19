@@ -45,6 +45,7 @@ function Detail(props) {
           </div>
         </div>
         <DetailPost />
+        <DetailPost />
         <Row>
           <Col size="md-2">
             <Link className="return-to-announcements" to={"/"+props.where}>← Back to {props.where}</Link>
