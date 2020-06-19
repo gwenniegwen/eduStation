@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { Input, TextArea, FormBtn } from "../components/Form";
-import Jumbotron from "../components/Jumbotron";
+import { useHistory } from 'react-router'
 import DetailPost from "../components/DetailPost"
+import CommentForm from "../components/Forms/CommentForm"
 import API from "../utils/API";
 import "../index.css";
 
@@ -27,9 +28,11 @@ function Detail(props) {
     e.preventDefault();
   }
 
+  const { push } = useHistory()
+
   return (
     <div className="detail-container">
-              <div className="container detail-info">
+        <div className="container detail-info">
         <div className="row justify-content-md-center">
         <div className="col-md-4 col-md-offset-4">
               <h1 className="content-title">
@@ -46,32 +49,16 @@ function Detail(props) {
         </div>
         <DetailPost />
         <DetailPost />
-        <Row>
-          <Col size="md-2">
-            <Link className="return-to-announcements" to={"/"+props.where}>← Back to {props.where}</Link>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="2">
-          <form className="commentForm">
-              <Input
-                name="username"
-                placeholder="Name"
-                />
-              <TextArea
-                name="content"
-                placeholder="Write what you think!"
-                />
-              <FormBtn comment
-                onClick={handleFormSubmit}
-                >
-                Comment
-              </FormBtn>
-            </form>
-          </Col>
-        </Row>
-                </div>
-                </div>
+        <CommentForm handleFormSubmit= {handleFormSubmit}/>
+        <div className="row">
+          <div className="column" size="md-2">
+            <button className="return-to-announcements btn btn-outline-light" type="button"
+            onClick={() => push("/" + props.where)}> ← Back to {props.where}
+            </button>
+          </div>
+        </div>
+        </div>
+        </div>
   
     );
   }
