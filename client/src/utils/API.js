@@ -17,6 +17,7 @@ export default {
   saveAnnouncement: function(announcementData) {
     return axios.post("/api/announcements", announcementData);
   },
+
   //Calendar calls
   getCalendars: function() {
     return axios.get("/api/calendar");
@@ -29,5 +30,19 @@ export default {
   },
   saveCalendar: function(calendarData) {
     return axios.post("/api/calendar", calendarData);
+  },
+
+  //Comment calls
+  getComments: function(id) {
+    return axios.get("/api/comment/post" + id);
+  },
+  getComment: function(id) {
+    return axios.get("/api/comment/" + id);
+  },
+  deleteComment: function(id) {
+    return axios.delete("/api/comment/" + id);
+  },
+  saveComment: function(commentData) {
+    return axios.post("/api/comment", commentData);
   }
 };
