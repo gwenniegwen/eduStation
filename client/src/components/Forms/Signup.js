@@ -25,7 +25,7 @@ function Signup() {
               <button type="button" className="btn btn-outline-light signup-submit justify-content-md-center">Sign Up</button>
             </div>
           </form>
-          <p className="switch-signin">Or log in <a href="/Login" className="signin-link">here</a></p>
+          <p className="switch-signin">Or log in <a href="/login" className="signin-link">here</a></p>
         </div>
       </div>
     </div>

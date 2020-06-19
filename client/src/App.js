@@ -19,17 +19,19 @@ function App() {
                 <Navbar />
                 <Switch>
                     <Route exact path="/" component={Welcome} />
-                    <Route exact path="/Login" component={Login} />
-                    <Route exact path="/Calendar" component={Calendar} />
-                    <Route exact path="/Signup" component={Signup} />
-                    {/* <Route exact path="/Posts" component={Posts} /> */}
-                    <Route exact path="/Forum" component={Forum} />
-                    <Route exact path="/Performance" component={Performance} />
+                    <Route exact path="/login" component={Login} />
+                    <Route exact path="/calendar" component={Calendar} />
+                    <Route exact path="/signup" component={Signup} />
+                    <Route exact path="/forum" component={Forum} />
+                    <Route exact path="/performance" component={Performance} />
                     <Route exact path="/announcements">
                         <Announcements />
                     </Route>
                     <Route exact path="/announcements/:id">
-                        <Detail />
+                        <Detail where="announcements"/>
+                    </Route>
+                    <Route exact path="/calendar/:id">
+                        <Detail where="calendar"/>
                     </Route>
                     <NotFound />
                 </Switch>
