@@ -11,31 +11,37 @@ import NotFound from "./pages/NotFound";
 import Performance from './pages/Performance';
 import Navbar from './components/Navbar';
 import Forum from './pages/ForumDemo';
+// import AuthState from './context/auth/AuthState';
+// import AlertState from './context/alert/AlertState';
 
 function App() {
     return (
-        <Router>
-            <div>
-                <Navbar />
-                <Switch>
-                    <Route exact path="/" component={Welcome} />
-                    <Route exact path="/Login" component={Login} />
-                    <Route exact path="/Calendar" component={Calendar} />
-                    <Route exact path="/Signup" component={Signup} />
-                
-                    <Route exact path="/Forum" component={Forum} />
-                    <Route exact path="/Performance" component={Performance} />
-                    <Route exact path="/announcements">
-                        <Announcements />
-                    </Route>
-                    <Route exact path="/announcements/:id">
-                        <Detail />
-                    </Route>
-                    <NotFound />
-                </Switch>
+        // <AuthState>
+        //     <AlertState>
+                <Router>
+                    <div>
+                        <Navbar />
+                        <Switch>
+                            <Route exact path="/" component={Welcome} />
+                            <Route exact path="/Login" component={Login} />
+                            <Route exact path="/Calendar" component={Calendar} />
+                            <Route exact path="/Signup" component={Signup} />
 
-            </div>
-        </Router>
+                            <Route exact path="/Forum" component={Forum} />
+                            <Route exact path="/Performance" component={Performance} />
+                            <Route exact path="/announcements">
+                                <Announcements />
+                            </Route>
+                            <Route exact path="/announcements/:id">
+                                <Detail />
+                            </Route>
+                            <NotFound />
+                        </Switch>
+
+                    </div>
+                </Router>
+            // {/* </AlertState>
+        // </AuthState> */}
     );
 }
 

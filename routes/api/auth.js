@@ -3,48 +3,67 @@ const router = express.Router();
 const bcrypt = require('bcryptjs');
 const config = require('config');
 const jwt = require('jsonwebtoken');
+const { check, validationResults } = require('express-validator/check');
+const auth = require('../../middleware/auth')
 
 const User = require('../../models/user')
 
-router.post('/', (req, res) => {
+//route with endpoint api/auth (get a logged in user)
+router.get('/', auth, async (req, res) => {
+    try {
+        const user = await User.findById(req.user.id).select('-password')
+        res.json(user);
+    } catch (err) {
+        console.error(err.message);
+        res.status(500).send('Server Error')
+    }
+});
 
-    const { email, password } = req.body;
+//route with endpoint api/auth (auth user & get token)
+router.post('/', [
+    check('email', 'please include a valid email'),
+    check('password', 'please include a valid password')
 
-    //user validation//
-    if (!email || !password) {
-        return res.status(400).json({ msg: 'Please Enter All Required Fields' })
+],
 
-        //Check for an exisiting user//
-        User.findOne({ email }
-            .then(user => {
-                if (!user) {
-                    return res.status(400).json({ msg: 'This User Does Not Exist' });
+    async (req, res) => {
+
+        //express validator//
+        const errors = validationResults(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({ errors: errors.array() })
+        }
+
+        const { email, pasword } = req.body
+        try {
+            let user = await User.findOne({ email });
+            if (!user) {
+                return res.status(400).json({ msg: 'This User Does Not Exist' });
+            }
+
+            const isMatch = await brcrypt.compare(password, user.password);
+            if (!isMatch) {
+                return res.status(400).json({ msg: 'invalid login' });
+            }
+
+            const payload = {
+                user: {
+                    id: user.id
                 }
+            }
+            jwt.sign(payload, config.get('jwtSecret'), {
+                expiresIn: 3600
+            }, (err, token) => {
+                if (err) throw err;
+                res.json({ token });
+            }
+            );
 
-                bcrypt.compare(password, user.password)
-                    .then(isMatch => {
-                        if (!isMatch) return res.status(400).json({msg: 'invalid login'});
-                        jwt.sign(
-                            { id: user.id },
-                            config.get('jwtSecret'),
-                            { expiresIn: 3600 },
-                            (err, token) => {
-                                if (err) throw err;
-                                res.json({
-                                    token,
-                                    user: {
-                                        id: user.id,
-                                        username: user.username,
-                                        email: user.email
-                                    }
-                                });
-                            }
-                        )
+        } catch (err) {
+            console.err(err.message);
+            res.status(500).send('Server Error')
+        }
+    }
+)
 
-                    })
-
-            })
-
-        });
-
-module.export = router;
+module.exports = router;

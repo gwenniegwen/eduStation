@@ -57,6 +57,7 @@ function Announcements() {
  
   return (
     <div className="announcementPage">
+      
       <Container >
         <Row >
           <Col size="md-6">

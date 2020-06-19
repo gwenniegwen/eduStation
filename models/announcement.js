@@ -7,6 +7,5 @@ const announcementSchema = new Schema({
   date: { type: Date, default: Date.now }
 });
 
-const Announcement = mongoose.model("Announcement", announcementSchema);
 
-module.exports = Announcement;
+module.exports = mongoose.model("Announcement", announcementSchema);

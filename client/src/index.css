@@ -67,16 +67,15 @@
 }
 
 .announcementPage{
-  background: url(./components/Welcome/DcydbI.jpg) green center center/cover no-repeat;
-  position: relative;
-  height: 100vh;
+  background: url(./components/Welcome/Green-background.jpg) no-repeat;
+background-size: cover;
  
 }
 
 .announcementForm input,
 .announcementForm textarea {
   width: 100%;
-  background: #fff;
+  background: url();
   padding: 15px;
   border: none;
   padding: 4px;
@@ -93,9 +92,61 @@
   display: flex;
   justify-content: center;
   margin: auto;
-  padding: auto;}
+  padding: auto;
+  color: white;
+  font-family: 'Architects Daughter', cursive;}
 
   .navTitle {
   font-size: 30px;
   text-align: left;
 }
+
+/* Delete Button (Announcement Page) */
+.delete-btn {
+  float: right;
+  color: #e74944;
+}
+
+/* JumboTron (annoucementPage) */
+
+.jumbotron{
+  background: url(./components/Welcome/Green-background.jpg);
+  border: 1px solid yellow;
+}
+
+/* list styling (announcement Page) */
+.list-overflow-container {
+  max-height: 545px;
+  border: 1px #DDDDDD solid;
+  border-radius: 4px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.list-overflow-container ul {
+  margin: 0;
+}
+
+.list-overflow-container li {
+  border-radius: 0px;
+  border-left: none;
+  border-right: none;
+}
+
+.list-overflow-container li * {
+  cursor: pointer;
+}
+
+.list-overflow-container li a {
+  color: #2A878C;
+}
+
+.list-overflow-container li:first-child {
+  border-top: none;
+}
+
+.list-overflow-container li:last-child {
+  border-bottom: none;
+}
+
+

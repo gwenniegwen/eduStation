@@ -31,12 +31,21 @@ io.on('connection', function(socket){
     console.log("you got a notification: "+msg );
   })
 });
+
+
 // Connect to the Mongo DB
-mongoose.set('useUnifiedTopology', true);
-mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://yechan:Password1!@cluster0-u3bak.mongodb.net/edustation?retryWrites=true&w=majority", { useNewUrlParser: true });
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/edustation";
+mongoose.connect(MONGODB_URI, {
+  useNewUrlParser: true, 
+  useFindAndModify: false,
+  useUnifiedTopology: true 
+});
+
+
 
 // Define API routes here
 app.use(routes);
+
 app.use('/api/users', require ('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'));
 
