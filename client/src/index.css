@@ -157,4 +157,9 @@ padding-bottom: 10px;
 padding-left: 5px;
 padding-right: 5px;
 border-radius: 25px;
+.commentForm{
+  padding-top: 1em;
+}
+.commentForm .btn{
+  width: 100%;
 }

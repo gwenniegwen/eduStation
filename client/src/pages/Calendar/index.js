@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './style.css'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
@@ -14,14 +14,21 @@ function Calendar() {
     loadEventToCal();
   }, []);
 
- function addEventToCal(e){
+  const eventRef = useRef();
+  const startRef = useRef();
+  const endRef = useRef();
+
+  function addEventToCal(e){
     e.preventDefault();
     API.saveCalendar({
-      title: e.target.form[0].value, 
-      start: e.target.form[1].value,
-      end: e.target.form[2].value,
+      title: eventRef.current.value, 
+      start: startRef.current.value, 
+      end: endRef.current.value, 
     })
-    .then(res=>{ 
+    .then(res=>{
+      eventRef.current.value = "";
+      startRef.current.value = "";
+      endRef.current.value = "";
       loadEventToCal();
     })
     .catch(err => console.log(err));
@@ -41,7 +48,7 @@ function Calendar() {
 
   return (
     <div className="calendarPage">
-    <AddEvent addEventToCal = {addEventToCal}/>
+    <AddEvent addEventToCal = {addEventToCal} eventRef= {eventRef} startRef={startRef} endRef={endRef}/>
   <div className="calendar">
       <FullCalendar
 
