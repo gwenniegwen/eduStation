@@ -10,7 +10,6 @@ import Detail from "./pages/Detail";
 import NotFound from "./pages/NotFound";
 import Performance from './pages/Performance';
 import Navbar from './components/Navbar';
-import Forum from './pages/ForumDemo';
 
 
 function App() {
