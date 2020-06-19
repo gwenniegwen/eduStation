@@ -8,7 +8,8 @@ import API from '../../utils/API'
 
 // Previous Event Add attempt not working
 function Calendar() {
-
+  const [calEvents, setCalEvents] =useState([{}]);
+  
   useEffect(() => {
     loadEventToCal();
   }, []);
