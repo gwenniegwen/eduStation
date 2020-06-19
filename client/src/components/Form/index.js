@@ -21,8 +21,8 @@ export function TextArea(props) {
 export function FormBtn(props) {
   return (
     <button {...props} style={{ 
-      background: "#f5ba13",
-      color: "black",
+      background: props.comment ? "#1daafc" : "#f5ba13",
+      color: props.comment ?  "white" : "black",
       boxShadow: "0 1px 3px rgba(0, 0, 0, 0.3)",
       cursor: "pointer",
       outline: "none",
