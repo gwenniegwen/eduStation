@@ -101,14 +101,13 @@
 }
 
 .detailPost  { 
-max-width: 600px;
+width: 360px;
 border-style: double;
 border-color: white;
 background-color: #1daafc;
 color: white;
 font-size: 15px;
 font-family: 'Architects Daughter', cursive;
-/* text-align: left; */
 padding: 20px;
 margin-top: 20px;
 margin-bottom: 8px;
@@ -117,32 +116,56 @@ padding-bottom: 10px;
 border-radius: 25px;
 }
 
-.return-to-announcements {
-font-size: 20px;
-color: #f1b34b;
+
+.commentForm {
+border-style: double;
+border-color: white;
+background-color: #1daafc;
+padding: 20px;
+margin-top: 20px;
+margin-bottom: 8px;
+padding-top: 10px;
+padding-bottom: 10px;
+border-radius: 25px;
+}
+
+.detailText {
+  color: white;
+  padding-right: 10px;
+  padding-left: 5px;
+}
+
+.detailPostUsername {
+  text-align: left;
+}
+
+.detailPostDate {
+  text-align: right;
+  font-size: 14px;
+}
+
+hr {
+  border-top: 1px solid white;
 
 }
 
-
-
-
-
 .detail-container {
-  padding-top: 50px;
-  background-color: #1daafc;
-  color: white;
-  height: 130vh;
+padding-top: 50px;
+background-color: #1daafc;
+color: white;
+height: 130vh;
 }
 
 .content-title {
-  font-family: 'Architects Daughter', cursive;
-  font-size: 60px;
-  max-width: 500px;
-  color: white;
+font-family: 'Architects Daughter', cursive;
+font-size: 60px;
+max-width: 500px;
+color: white;
+text-align: center;
 }
 
 .content-details {
-  max-width: 600px;
+max-width: 600px;
 
   /* font-family: 'Architects Daughter', cursive;
   font-size: 20px;
@@ -150,10 +173,11 @@ color: #f1b34b;
 }
 
 .content-text {
-  font-family: 'Architects Daughter', cursive;
-  font-size: 20px;
-  color: white;
-  border-style: double;
+font-family: 'Architects Daughter', cursive;
+width: 360px;
+font-size: 20px;
+color: white;
+border-style: double;
 border-color: white;
 padding-top: 10px;
 margin-bottom: 8px;
@@ -167,6 +191,27 @@ border-radius: 25px
   padding-top: 1em;
 }
 
-.commentForm .btn{
-  width: 100%;
+.commentButton {
+  border-radius: 25px;
+  font-family: 'Architects Daughter', cursive;
+}
+
+.commentButton:hover {
+  background-color: #f1b34b;
+}
+
+.commentLabel {
+  font-family: 'Architects Daughter', cursive;
+  color: white;
+}
+
+.return-to-announcements {
+  border-radius: 25px;
+  background-color: #1daafc;
+  color: white;
+  font-family: 'Architects Daughter', cursive;
+}
+
+.return-to-announcements:hover {
+  background-color: #f1b34b;
 }
