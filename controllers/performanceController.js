@@ -1,6 +1,6 @@
 const db = require("../models");
 
-// Defining methods for the announcementsController
+// Defining methods for the performanceController
 module.exports = {
   findAll: function(req, res) {
     db.Performance

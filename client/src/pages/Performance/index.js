@@ -1,5 +1,6 @@
 import React, { useReducer, useRef } from "react";
 import AddEmoji from "../../components/Emoji/Emoji";
+import API from '../../utils/API'
 import "./style.css";
 import "../Calendar/style.css";
 // import Calendar from "../Calendar/index.js";

@@ -1,5 +1,5 @@
 /* Chinami */
-body {
+/* body {
     margin: 0;
     padding: 0;
     font-family: 'Architects Daughter', cursive;
@@ -23,9 +23,9 @@ body {
     font-family: 'Architects Daughter', cursive;;
     color: #2b546a;
     font-weight: 300;
-  }
+  } */
   
-  h2 {
+  /* h2 {
     font-size: 20px;
     margin-top: 8px;
   }
@@ -40,9 +40,9 @@ body {
   .header {
     height: 60px;
     border-bottom: 1px solid #eee;
-  }
+  } */
   
-  .header-logo {
+  /* .header-logo {
     height: 60px;
     width: 60px;
     background-color: #2b546a;
@@ -53,20 +53,20 @@ body {
   .header-logo img {
     width: 28px;
     padding-top: 16px;
-  }
+  } */
   
-  .main-wrapper {
+  /* .main-wrapper {
     background-color: #f4fafa;
-  }
+  } */
   
-  .main {
+  /* .main {
     max-width: 1040px;
     margin: 0 auto;
     margin-top: -100px;
     padding: 96px 0;
-  }
+  } */
   
-  .lesson-container {
+  /* .lesson-container {
     margin-top: 96px;
   }
   
@@ -271,8 +271,8 @@ body {
     to {
       transform: rotate(360deg);
     }
-  }
-   .table {
+  } */
+   /* .table {
      background-color: white;
      border-radius: 3px;
      border-color: none;
@@ -299,6 +299,6 @@ body {
   }
   .btnEmoji btn-info:hover{
     background-color: #f1b34b;
-  }
+  } */
   /* --------------------------------------------------------------------------- */
   

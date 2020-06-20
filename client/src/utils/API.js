@@ -44,5 +44,19 @@ export default {
   },
   saveComment: function(commentData) {
     return axios.post("/api/comment", commentData);
+  },
+
+  //Performance calls
+  getPerformances: function() {
+    return axios.get("/api/performance");
+  },
+  getPerformance: function(id) {
+    return axios.get("/api/performance/" + id);
+  },
+  deletePerformance: function(id) {
+    return axios.delete("/api/performance/" + id);
+  },
+  savePerformance: function(performanceData) {
+    return axios.post("/api/performance", performanceData);
   }
 };
