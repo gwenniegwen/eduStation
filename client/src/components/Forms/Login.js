@@ -35,7 +35,7 @@ function Login(props) {
 
   const { email, password} = user;
 
-  const onChange = e => setUser({ ...user, [e.target.username]: e.target.value })
+  // const onChange = e => setUser({ ...user, [e.target.username]: e.target.value })
   const onSubmit = e => {
     e.preventDefault();
    if(email === '' || password === ''){
@@ -55,20 +55,20 @@ function Login(props) {
         <form onSubmit={onSubmit} className="loginForm col-md-offset-4">
         <div className="form-text">
           <div className="form-group">
-            <label htmlfor="exampleInputEmail1" className="authlabel">Email address</label>
+            <label htmlFor="exampleInputEmail1" className="authlabel">Email address</label>
             <input 
             type="email" className="form-control authinput" id="email-inputLogin" 
             value={email} 
-            onChange={onChange} 
+            // onChange={onChange} 
             required
             placeholder="Email" />
           </div>
             <div className="form-group">
-              <label htmlfor="exampleInputPassword1" className="authlabel">Password</label>
+              <label htmlFor="exampleInputPassword1" className="authlabel">Password</label>
               <input 
               type="password" className="form-control authinput" id="password-inputLogin" 
               value={password} 
-              onChange={onChange}
+              // onChange={onChange}
               required
               placeholder="Password" />
           </div>

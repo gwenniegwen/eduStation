@@ -1,5 +1,6 @@
 import React, { useReducer, useRef } from "react";
 import AddEmoji from "../../components/Emoji/Emoji";
+import API from '../../utils/API'
 import "./style.css";
 import "../Calendar/style.css";
 // import Calendar from "../Calendar/index.js";
@@ -60,7 +61,7 @@ function Performance() {
   };
 
   return (
-    <div className="container text-center">
+    <div className="container text-center bodyP">
       <div>
         <h1>Performance</h1>
         <h2>in this week!</h2>

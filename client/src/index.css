@@ -67,7 +67,7 @@
 }
 
 .announcementPage{
-  background: url(./components/Welcome/Green-background.jpg) no-repeat;
+background: #1daafc;
 background-size: cover;
  
 }
@@ -75,7 +75,6 @@ background-size: cover;
 .announcementForm input,
 .announcementForm textarea {
   width: 100%;
-  background: url();
   padding: 15px;
   border: none;
   padding: 4px;
@@ -109,9 +108,10 @@ background-size: cover;
 
 /* JumboTron (annoucementPage) */
 
-.jumbotron{
+.jumbotron, .form-control{
   background: url(./components/Welcome/Green-background.jpg);
   border: 1px solid yellow;
+  color: white;
 }
 
 /* list styling (announcement Page) */

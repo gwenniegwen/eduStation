@@ -15,7 +15,7 @@ import AuthState from './context/auth/AuthState'
 function App() {
   return (
     <AuthState>
-      {/* <AlertState> */}
+     
         <Router>
             <div>
                 <Navbar />
@@ -39,7 +39,7 @@ function App() {
 
             </div>
         </Router>
-      {/* </AlertState> */}
+     
     </AuthState>
   );
 }
