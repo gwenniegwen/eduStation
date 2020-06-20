@@ -29,6 +29,15 @@
   background-color: #f1b34b;
 }
 
+.deleteEventButton {
+  border-radius: 25px;
+  font-family: 'Architects Daughter', cursive;
+}
+
+.deleteEventButton:hover {
+  background-color: #f1b34b;
+}
+
 .calendar {
   background-color: #749877;
   font-family: 'Architects Daughter', cursive;
