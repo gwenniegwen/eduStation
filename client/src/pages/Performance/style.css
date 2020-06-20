@@ -1,5 +1,5 @@
 /* Chinami */
-/* body {
+/* bodyP {
     margin: 0;
     padding: 0;
     font-family: 'Architects Daughter', cursive;
@@ -272,7 +272,7 @@
       transform: rotate(360deg);
     }
   } */
-   /* .table {
+   .table {
      background-color: white;
      border-radius: 3px;
      border-color: none;
@@ -299,6 +299,4 @@
   }
   .btnEmoji btn-info:hover{
     background-color: #f1b34b;
-  } */
-  /* --------------------------------------------------------------------------- */
-  
+  } 

@@ -52,7 +52,7 @@ function Performance() {
   };
 
   return (
-    <div className="container text-center">
+    <div className="container text-center bodyP">
       <div>
         <h1>Performance</h1>
         <h2>in this week!</h2>
