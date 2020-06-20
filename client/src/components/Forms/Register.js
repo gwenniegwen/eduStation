@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import AuthContext from '../../context/auth/authContext'
 
 
-function Signup(props) {
+function Register(props) {
   const authContext = useContext(AuthContext);
 
   const { register, error, clearErrors, isAuthenticated } = authContext;
@@ -12,7 +12,7 @@ function Signup(props) {
     if (isAuthenticated) {
       props.history.push('/');
     }
-    if (error === 'This User Already Exists') {
+    if (error === "This User Already Exists") {
       console.log(error);
       clearErrors();
     }
@@ -20,25 +20,25 @@ function Signup(props) {
   }, [error, isAuthenticated, props.history]);
 
   const [user, setUser] = useState({
-    username: '',
+    name: '',
     email: '',
     password: '',
     password2: ''
 
   })
 
-  const { username, email, password, password2 } = user;
+  const { name, email, password, password2 } = user;
 
   const onChange = e => setUser({ ...user, [e.target.name]: e.target.value });
   const onSubmit = e => {
     e.preventDefault();
-    if (username === '' || email === '' || password === '') {
+    if (name === '' || email === '' || password === '') {
       console.log("all field required")
     } else if (password !== password2) {
      console.log("passwords do not match")
     } else {
       register({
-        username,
+        name,
         email,
         password
       });
@@ -60,8 +60,8 @@ function Signup(props) {
                   <input className="form-control"
                  id="name"
                  type="text"  
-                 name="username" 
-                 value={username} 
+                 name="name" 
+                 value={name} 
                  onChange={onChange} 
                  required 
                  placeholder="Username" />
@@ -97,7 +97,7 @@ function Signup(props) {
                   <label htmlFor="password2" className="authlabel">Confirm Password</label>
                   <input className="form-control"
                   id="password2"
-                  type="password2" 
+                  type="password" 
                   name="password2"  
                   value={password2} 
                   onChange={onChange} 
@@ -118,4 +118,4 @@ function Signup(props) {
   )
 }
 
-export default Signup
+export default Register

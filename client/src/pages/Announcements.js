@@ -1,5 +1,5 @@
-import React, { useState, useEffect} from "react";
-// import AuthContext from '../context/auth/authContext';
+import React, { useState, useEffect, useContext} from "react";
+import AuthContext from '../context/auth/authContext';
 import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
 import openSocket from 'socket.io-client';
@@ -23,12 +23,12 @@ const socket = openSocket(listenTo);
 
 function Announcements() {
 
-//   //authorize user for each page//
-// const authContext = useContext(AuthContext);
-// useEffect(()=> {
-//   authContext.loadUser();
-// //eslint-disable-next-line
-// }, []);
+  //authorize user for each page//
+const authContext = useContext(AuthContext);
+useEffect(()=> {
+  authContext.loadUser();
+//eslint-disable-next-line
+}, []);
 
   // Setting our component's initial state
   const [announcements, setAnnouncements] = useState([])
@@ -54,8 +54,10 @@ function Announcements() {
   // Deletes an announcement from the database with a given id, then reloads announcements from the db
   function deleteAnnouncement(id) {
     API.deleteAnnouncement(id)
-      .then(res => loadAnnouncements())
+      .then(res => {loadAnnouncements();socket.emit('reload','announcements');})
       .catch(err => console.log(err));
+    API.deleteAllComments(id)
+    .catch(err => console.log(err));
   }
 
   // Handles updating component state when the user types into the input field

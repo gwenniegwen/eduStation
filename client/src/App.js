@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Calendar from "./pages/Calendar";
 import Login from "./pages/Login/index";
-import Signup from "./pages/Signup/index";
+import Register from "./components/Forms/Register";
 import Welcome from "./pages/Welcome";
 import Announcements from "./pages/Announcements";
 import Detail from "./pages/Detail";
@@ -24,7 +24,7 @@ function App() {
                     <Route exact path="/" component={Welcome} />
                     <Route exact path="/login" component={Login} />
                     <PrivateRoute exact path="/calendar" component={Calendar} />
-                    <Route exact path="/signup" component={Signup} />
+                    <Route exact path="/register" component={Register} />
                     <PrivateRoute exact path="/performance" component={Performance} />
                     <PrivateRoute exact path="/announcements">
                         <Announcements />

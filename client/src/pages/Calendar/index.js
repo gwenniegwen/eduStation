@@ -28,7 +28,7 @@ function Calendar() {
   }, []);
 
   const [calEvents, setCalEvents] = useState([{ }]);
-
+  let isDeleting = false;
   socket.on('reload', function(msg){
     loadEventToCal();
   });
@@ -41,6 +41,19 @@ function Calendar() {
   const eventRef = useRef();
   const startRef = useRef();
   const endRef = useRef();
+
+  function deleteMode(e){
+    e.preventDefault();
+    isDeleting = !isDeleting;
+  }
+
+  function deleteEvent(id){
+    API.deleteCalendar(id)
+    .then(res => {loadEventToCal();socket.emit('reload','calendar');})
+    .catch(err => console.log(err));
+    API.deleteAllComments(id)
+    .catch(err => console.log(err));
+  }
 
   function addEventToCal(e){
     e.preventDefault();
@@ -58,6 +71,7 @@ function Calendar() {
     })
     .catch(err => console.log(err));
   }
+
   function loadEventToCal(){
     API.getCalendars()
     .then(res=>{
@@ -65,7 +79,8 @@ function Calendar() {
         title: event.title,
         start: event.start,
         end: event.end,
-        url: "/calendar/"+event._id
+        url: "/calendar/"+event._id,
+        id: event._id
       })))
     })
     .catch(err=>console.log(err));
@@ -73,7 +88,7 @@ function Calendar() {
 
   return (
     <div className="calendarPage">
-    <AddEvent addEventToCal = {addEventToCal} eventRef= {eventRef} startRef={startRef} endRef={endRef}/>
+    <AddEvent addEventToCal = {addEventToCal} deleteMode={deleteMode} eventRef= {eventRef} startRef={startRef} endRef={endRef}/>
   <div className="calendar">
       <FullCalendar
 
@@ -87,7 +102,17 @@ function Calendar() {
         weekends={false}
         editable= {true}
         events= {calEvents}
-        eventClick={e=>{e.jsEvent.preventDefault();if(e.event.url){window.location.replace(e.event.url)}}}
+        eventClick={e=>{
+          e.jsEvent.preventDefault();
+          console.log(isDeleting);
+          if(!isDeleting){
+            if(e.event.url){
+              window.location.replace(e.event.url);
+            }
+          }else{
+            deleteEvent(e.event.id);
+          }
+        }}
         />
       </div>
     </div>

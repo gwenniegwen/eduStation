@@ -7,7 +7,6 @@
   border-style: double;
   border-color: white;
   background-color: #1daafc;
-  /* text-align: left; */
   padding: 20px;
   margin-top: 20px;
   margin-bottom: 8px;
@@ -23,11 +22,38 @@
 .addEventButton {
   border-radius: 25px;
   font-family: 'Architects Daughter', cursive;
+  margin-bottom: 10px;
+}
+
+.eventButton {
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .addEventButton:hover {
   background-color: #f1b34b;
 }
+
+.deleteEventButton {
+  border-radius: 25px;
+  font-family: 'Architects Daughter', cursive;
+}
+
+.deleteEventButton:hover {
+  background-color: #f1b34b;
+}
+
+.deleteEventButton:focus {     
+  background-color:#f1b34b;
+}
+
+/* .leftButton {
+  text-align: left;
+}
+
+.rightButton {
+  text-align: right;
+} */
 
 .calendar {
   background-color: #749877;

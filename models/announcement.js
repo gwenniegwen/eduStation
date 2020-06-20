@@ -8,4 +8,6 @@ const announcementSchema = new Schema({
 });
 
 
-module.exports = mongoose.model("Announcement", announcementSchema);
+const Announcement = mongoose.model("Announcement", announcementSchema);
+
+module.exports = Announcement;

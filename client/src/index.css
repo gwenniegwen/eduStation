@@ -11,6 +11,9 @@
   background-color: #1daafc;
   height: 130vh;
 }
+.commentFormName {
+  margin-top: 15px;
+}
 
 .welcome-info {
   text-align: center;
@@ -108,7 +111,7 @@ background-size: cover;
 
 /* JumboTron (annoucementPage) */
 
-.jumbotron, .form-control{
+.jumbotron{
   background: url(./components/Welcome/Green-background.jpg);
   border: 1px solid yellow;
   color: white;
@@ -157,7 +160,7 @@ background-size: cover;
   width: 100%;
 }
 .detailPost  { 
-width: 360px;
+/* width: 360px; */
 border-style: double;
 border-color: white;
 background-color: #1daafc;
@@ -196,7 +199,7 @@ border-radius: 25px;
 }
 
 .detailPostDate {
-  text-align: right;
+  /* text-align: right; */
   font-size: 14px;
 }
 
@@ -209,7 +212,8 @@ hr {
 padding-top: 50px;
 background-color: #1daafc;
 color: white;
-height: 130vh;
+min-height: 100vh;
+height: 100%;
 }
 
 .content-title {
@@ -221,12 +225,15 @@ text-align: center;
 }
 
 .content-details {
-max-width: 600px;
-
-  /* font-family: 'Architects Daughter', cursive;
-  font-size: 20px;
-  color: white; */
+  width: 360px;
 }
+
+/* max-width: 600px;
+
+  font-family: 'Architects Daughter', cursive;
+  font-size: 20px;
+  color: white;
+} */
 
 .content-text {
 font-family: 'Architects Daughter', cursive;
@@ -241,10 +248,6 @@ padding-bottom: 10px;
 padding-left: 5px;
 padding-right: 5px;
 border-radius: 25px
-}
-
-.commentForm {
-  padding-top: 1em;
 }
 
 .commentButton {
@@ -270,4 +273,12 @@ border-radius: 25px
 
 .return-to-announcements:hover {
   background-color: #f1b34b;
+}
+
+
+.form-control{
+
+  background: white;
+  color: black;
+  box-shadow: 0 1px 5px rgb(138, 137, 137);
 }
