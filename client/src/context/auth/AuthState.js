@@ -5,16 +5,16 @@ import setAuthToken from '../../utils/setAuthToken'
 import axios from "axios";
 
 import {
-REGISTER_SUCCESS,
-REGISTER_FAIL,
-USER_LOADED,
-AUTH_ERROR,
-LOGIN_SUCCESS,
-LOGIN_FAIL,
-LOGOUT,
-CLEAR_ERRORS
+    REGISTER_SUCCESS,
+    REGISTER_FAIL,
+    USER_LOADED,
+    AUTH_ERROR,
+    LOGIN_SUCCESS,
+    LOGIN_FAIL,
+    LOGOUT,
+    CLEAR_ERRORS
 
-} from'../types';
+} from '../types';
 
 const AuthState = (props) => {
     const initialState = {
@@ -29,9 +29,8 @@ const AuthState = (props) => {
     // Load User
 
     const loadUser = async () => {
-        if (localStorage.token) {
-            setAuthToken(localStorage.token);
-        }
+
+        setAuthToken(localStorage.token);
 
         try {
             const res = await axios.get("/api/auth");
@@ -49,8 +48,8 @@ const AuthState = (props) => {
     const register = async formData => {
         const config = {
             headers: {
-                "Content-Type": "application/json",
-            },
+                "Content-Type": "application/json"
+            }
         };
 
         try {
@@ -73,8 +72,8 @@ const AuthState = (props) => {
     const login = async formData => {
         const config = {
             headers: {
-                "Content-Type": "application/json",
-            },
+                "Content-Type": "application/json"
+            }
         };
 
         try {
@@ -93,9 +92,9 @@ const AuthState = (props) => {
             });
         }
     };
-    
+
     //Logout
-    const logout  = () => dispatch({ type: LOGOUT });
+    const logout = () => dispatch({ type: LOGOUT });
 
     //Clear Errors
     const clearErrors = () => dispatch({ type: CLEAR_ERRORS });

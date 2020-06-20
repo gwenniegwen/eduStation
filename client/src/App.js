@@ -9,31 +9,32 @@ import Detail from "./pages/Detail";
 import NotFound from "./pages/NotFound";
 import Performance from './pages/Performance';
 import Navbar from './components/Navbar';
-import AuthState from './context/auth/AuthState'
+import AuthState from './context/auth/AuthState';
+import PrivateRoute from './components/Forms/PrivateRoute';
+
 
 
 function App() {
   return (
     <AuthState>
-     
         <Router>
             <div>
                 <Navbar />
                 <Switch>
                     <Route exact path="/" component={Welcome} />
                     <Route exact path="/login" component={Login} />
-                    <Route exact path="/calendar" component={Calendar} />
+                    <PrivateRoute exact path="/calendar" component={Calendar} />
                     <Route exact path="/signup" component={Signup} />
-                    <Route exact path="/performance" component={Performance} />
-                    <Route exact path="/announcements">
+                    <PrivateRoute exact path="/performance" component={Performance} />
+                    <PrivateRoute exact path="/announcements">
                         <Announcements />
-                    </Route>
-                    <Route exact path="/announcements/:id">
+                    </PrivateRoute>
+                    <PrivateRoute exact path="/announcements/:id">
                         <Detail where="announcements"/>
-                    </Route>
-                    <Route exact path="/calendar/:id">
+                    </PrivateRoute>
+                    <PrivateRoute exact path="/calendar/:id">
                         <Detail where="calendar"/>
-                    </Route>
+                    </PrivateRoute>
                     <NotFound />
                 </Switch>
 

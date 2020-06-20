@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcryptjs");
-const { check, validationResult } = require("express-validator/check");
+const { check, validationResult } = require("express-validator");
 const config = require("config");
 const jwt = require("jsonwebtoken");
 
@@ -13,7 +13,7 @@ router.post(
   [
     check("username", "username is required").not().isEmpty(),
     check("email", " include a valid email").isEmail(),
-    check("passord", "Password must be greater than 6").isLength({ min: 6 }),
+    check("password", "Password must be greater than 6").isLength({ min: 6 }),
   ],
 
   async (req, res) => {
@@ -38,14 +38,15 @@ router.post(
 
       const salt = await bcrypt.genSalt(10);
       user.password = await bcrypt.hash(password, salt);
+      user.password2 = await bcrypt.hash(password, salt);
 
       await user.save();
 
       const payload = {
         user: {
           id: user.id,
-        }
-      }
+        },
+      };
 
       jwt.sign(
         payload,
@@ -56,7 +57,7 @@ router.post(
         (err, token) => {
           if (err) throw err;
           res.json({ token });
-        }
+        },
       );
     } catch (err) {
       console.error(err.message);

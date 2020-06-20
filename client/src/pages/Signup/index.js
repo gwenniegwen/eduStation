@@ -6,7 +6,7 @@ function Signin(){
     
     return (
         <div className="signin-container">
-          {/* <Signup /> */}
+          <Signup />
       </div>
     );
 }

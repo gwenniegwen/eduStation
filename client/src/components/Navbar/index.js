@@ -1,4 +1,4 @@
-import React, { Fragment, useContext } from "react";
+import React, { Fragment, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import AuthContext from '../../context/auth/authContext';
 
@@ -6,69 +6,74 @@ import AuthContext from '../../context/auth/authContext';
 
 function Navbar() {
   const authContext = useContext(AuthContext);
-  const { isAuthenticated, logout, user } = authContext;
+  const { isAuthenticated, logout, user, loadUser } = authContext;
 
-  const onLogout =() => {
+  useEffect(() => {
+    loadUser();
+    // eslint-disable-next-line
+  }, []);
+
+  const onLogout = () => {
     logout();
   };
-  
+
   const authLinks = (
     <Fragment>
-      <li> Welcome {user && user.username} </li>
+      <li> Welcome {user && user.name} </li>
       <li> <a onClick={onLogout} href="#!">
-        <i className="fas fa-sign-out-alt"></i><span className="hide-sm">Logout</span>
+        <i className="fas fa-sign-out-alt"></i><span>Logout</span>
       </a></li>
       <li className="nav-item">
-            <Link
-              to="/calendar"
-              className={
-                window.location.pathname === "/calendar"
-                  ? "nav-link active"
-                  : "nav-link"
-              }
-            >
-              Calendar
+        <Link
+          to="/calendar"
+          className={
+            window.location.pathname === "/calendar"
+              ? "nav-link active"
+              : "nav-link"
+          }
+        >
+          Calendar
             </Link>
-          </li>
+      </li>
 
-          <li className="nav-item">
-            <Link
-              to="/announcements"
-              className={
-                window.location.pathname === "/announcements"
-                  ? "nav-link active"
-                  : "nav-link"
-              }
-            >
-              Announcements
+      <li className="nav-item">
+        <Link
+          to="/announcements"
+          className={
+            window.location.pathname === "/announcements"
+              ? "nav-link active"
+              : "nav-link"
+          }
+        >
+          Announcements
             </Link>
-          </li>
+      </li>
 
-          <li className="nav-item">
-            <Link
-              to="/performance"
-              className={
-                window.location.pathname === "/performance"
-                  ? "nav-link active"
-                  : "nav-link"
-              }
-            >
-              Performance
+      <li className="nav-item">
+        <Link
+          to="/performance"
+          className={
+            window.location.pathname === "/performance"
+              ? "nav-link active"
+              : "nav-link"
+          }
+        >
+          Performance
             </Link>
-          </li>
-          <li className="nav-item">
-            <Link
-              to="/"
-              className={
-                window.location.pathname === "/"
-                  ? "nav-link active"
-                  : "nav-link"
-              }
-            >
-              Log Out
+      </li>
+      <li className="nav-item">
+        <Link
+          to="/"
+          className={
+            window.location.pathname === "/"
+              ? "nav-link active"
+              : "nav-link"
+          }
+        >
+          Log Out
             </Link>
 
-          </li>
+      </li>
     </Fragment>
   );
 
@@ -89,30 +94,30 @@ function Navbar() {
       </li>
 
       <li className="nav-item">
-            <Link
-              to="/login"
-              className={
-                window.location.pathname === "/login"
-                  ? "nav-link active"
-                  : "nav-link"
-              }
-            >
-              Login
+        <Link
+          to="/login"
+          className={
+            window.location.pathname === "/login"
+              ? "nav-link active"
+              : "nav-link"
+          }
+        >
+          Login
             </Link>
-          </li>
+      </li>
 
-          <li className="nav-item">
-            <Link
-              to="/signup"
-              className={
-                window.location.pathname === "/signup"
-                  ? "nav-link active"
-                  : "nav-link"
-              }
-            >
-           Signup
+      <li className="nav-item">
+        <Link
+          to="/signup"
+          className={
+            window.location.pathname === "/signup"
+              ? "nav-link active"
+              : "nav-link"
+          }
+        >
+          Signup
             </Link>
-          </li>
+      </li>
     </Fragment>
   );
 
@@ -123,8 +128,8 @@ function Navbar() {
       </Link>
       <div className="pagelinks">
         <ul className="navbar-nav">
-        {isAuthenticated ? authLinks : guestLinks}
-          
+          {isAuthenticated ? authLinks : guestLinks}
+
         </ul>
       </div>
     </nav>

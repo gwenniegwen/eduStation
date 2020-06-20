@@ -5,7 +5,6 @@ import DetailPost from "../components/DetailPost"
 import CommentForm from "../components/Forms/CommentForm"
 import openSocket from 'socket.io-client';
 import API from "../utils/API";
-import AuthContext from '../context/auth/authContext';
 import "../index.css";
 
 let listenTo = "";

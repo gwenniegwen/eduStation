@@ -1,9 +1,12 @@
 const express = require("express");
+
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
+
+
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -41,12 +44,14 @@ io.on('connection', function (socket) {
 
 
 // Connect to the Mongo DB
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/edustation";
-mongoose.connect(MONGODB_URI, {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useUnifiedTopology: true
-});
+// const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/edustation";
+// mongoose.connect(MONGODB_URI, {
+//   useNewUrlParser: true,
+//   useFindAndModify: false,
+//   useUnifiedTopology: true,
+  
+// });
+mongoose.connect('mongodb://localhost:27017/myapp', {useNewUrlParser: true});
 
 
 

@@ -1,16 +1,12 @@
 import React, {useState, useContext, useEffect} from "react";
 import AuthContext from '../../context/auth/authContext';
-// import AlertContext from '../../context/alert/alertContext';
-import '../../context/types'
 
 
 function Login(props) {
-  // const alertContext = useContext(AlertContext);
+  
   const authContext = useContext(AuthContext);
 
-  // const {setAlert } = alertContext;
-
-  const { login, error, clearErrors, isAuthenticated } = authContext
+  const { login, error, clearErrors, isAuthenticated } = authContext;
 
   useEffect(() => {
 
@@ -31,11 +27,12 @@ function Login(props) {
     password: ''
     
 
-  })
+  });
 
   const { email, password} = user;
 
-  // const onChange = e => setUser({ ...user, [e.target.username]: e.target.value })
+  const onChange = e => setUser({ ...user, [e.target.name]: e.target.value });
+  
   const onSubmit = e => {
     e.preventDefault();
    if(email === '' || password === ''){
@@ -46,7 +43,8 @@ function Login(props) {
        password
      });
     }
-  }
+  };
+
   return (
     <div className="container">
     <div className="row justify-content-md-center">
@@ -55,26 +53,33 @@ function Login(props) {
         <form onSubmit={onSubmit} className="loginForm col-md-offset-4">
         <div className="form-text">
           <div className="form-group">
-            <label htmlFor="exampleInputEmail1" className="authlabel">Email address</label>
-            <input 
-            type="email" className="form-control authinput" id="email-inputLogin" 
+            <label htmlFor="email" className="authlabel">Email Address</label>
+            <input className="form-control authinput" 
+            id="email" 
+            type="email" 
+            name="email"
             value={email} 
-            // onChange={onChange} 
+            onChange={onChange} 
             required
             placeholder="Email" />
           </div>
+            
             <div className="form-group">
-              <label htmlFor="exampleInputPassword1" className="authlabel">Password</label>
-              <input 
-              type="password" className="form-control authinput" id="password-inputLogin" 
+              <label htmlFor="password" className="authlabel">Password</label>
+              <input className="form-control authinput" 
+              id="password"
+              type="password" 
+              name="password" 
               value={password} 
-              // onChange={onChange}
+              onChange={onChange}
               required
               placeholder="Password" />
           </div>
           </div>
           <div className="button-row justify-content-md-center">
-          <button type="submit" value="login" className="btn btn-outline-light login-submit authentication-button">Log In</button>
+          <button className="btn btn-outline-light login-submit authentication-button"
+          type="submit" 
+          value="Login" >Log In</button>
           </div>
         </form>
             <p className="switch-signin">Or sign up <a href="/signup" className="signin-link">here</a></p>

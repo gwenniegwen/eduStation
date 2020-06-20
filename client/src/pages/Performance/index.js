@@ -1,6 +1,6 @@
 import React, { useReducer, useRef } from "react";
 import AddEmoji from "../../components/Emoji/Emoji";
-import API from '../../utils/API'
+// import API from '../../utils/API'
 import "./style.css";
 import "../Calendar/style.css";
 // import Calendar from "../Calendar/index.js";
@@ -129,7 +129,7 @@ function Performance() {
       </table>
 
       <div>
-        <h2></h2>
+        {/* <h2></h2> */}
       </div>
       <form
         className="form-group"
