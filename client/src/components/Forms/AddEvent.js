@@ -44,15 +44,16 @@ function AddEvent({ addEventToCal, deleteMode ,eventRef, startRef, endRef }) {
                 />
               </div>
             </div>
-            <div className="button-row addeventrow justify-content-md-center">
-              <div className="column">
+            <div className="button-row justify-content addeventrow -md-center">
+              <div className="column col-med">
               <button
                 type="button"
-                className="btn btn-outline-light justify-content-md-center addEventButton"
+                className="btn btn-outline-light eventButton addEventButton"
                 onClick={(e) => addEventToCal(e)}
               >
                 Add Event
-              </button>
+              </button></div>
+              <div className="column col-med">
               <button
                 type="button"
                 className="btn btn-outline-light justify-content-md-center deleteEventButton"

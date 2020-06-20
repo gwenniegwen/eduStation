@@ -4,10 +4,10 @@ import React from 'react'
 function CommentForm({ handleFormSubmit, nameRef, commentRef }) {
 
     return (
-        <div className="container top-container">
+        <div className="container">
             <div className="row justify-content-md-center">
                 <div className="col-md-4 col-md-offset-4">
-                    <h2 className="formName">Add a Comment</h2>
+                    <h2 className="formName commentFormName">Add a Comment</h2>
                     <form className="commentForm col-md-offset-4">
                         <div className="form-text">
                             <div className="form-group">
