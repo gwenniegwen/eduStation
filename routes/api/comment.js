@@ -7,8 +7,9 @@ router.route("/")
   .post(commentController.create);
 
 router.route("/post/:id")
-  .get(commentController.findAll);
-  
+  .get(commentController.findAll)
+  .delete(commentController.removeAll);
+
 // Matches with "/api/comment/:id"
 router
   .route("/:id")
