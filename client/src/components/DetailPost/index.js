@@ -2,7 +2,7 @@ import React from 'react'
 import DeleteBtn from "../DeleteBtn";
 
 
-function DetailPost({user, content, date}) {
+function DetailPost({id, user, content, date, deleteComment}) {
 
     return (
         <div className="row justify-content-md-center">
@@ -15,7 +15,7 @@ function DetailPost({user, content, date}) {
         <div className="col">
         <div className="detailPostDate detailText">{date}</div></div></div><hr className="postBreak"/>
         <DeleteBtn className="DetailPostDelete pull-right" 
-        // onClick={() => deleteAnnouncement(announcement._id)} 
+        onClick={() => deleteComment(id)} 
         />
         <div className="detailPostContent detailText">{content}</div>
         <br />
