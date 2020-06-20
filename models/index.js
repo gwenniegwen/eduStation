@@ -1,4 +1,5 @@
 module.exports = {
   Announcement: require("./announcement"),
-  User: require("./User")
+  User: require("./User"),
+  Calendar: require("./calendar")
 };

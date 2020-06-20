@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const announcementsController = require("../../controllers/announcementsController");
-// const auth = require("../../custom middleware/auth");
+
 
 // Matches with "/api/announcements"
 router.route("/"

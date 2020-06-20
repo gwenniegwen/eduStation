@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 const { check, validationResults } = require('express-validator/check');
 const auth = require('../../middleware/auth')
 
+
 const User = require('../../models/user')
 
 //route with endpoint api/auth (get a logged in user)
@@ -21,17 +22,17 @@ router.get('/', auth, async (req, res) => {
 
 //route with endpoint api/auth (auth user & get token)
 router.post('/', [
-    check('email', 'please include a valid email'),
-    check('password', 'please include a valid password')
+    check('email', 'please include a valid email').isEmail(),
+    check('password', 'please include a valid password').exists()
 
 ],
 
     async (req, res) => {
 
         //express validator//
-        const errors = validationResults(req);
+        const errors = validationResult(req);
         if (!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() })
+            return res.status(400).json({ errors: errors.array() });
         }
 
         const { email, pasword } = req.body
@@ -43,7 +44,7 @@ router.post('/', [
 
             const isMatch = await brcrypt.compare(password, user.password);
             if (!isMatch) {
-                return res.status(400).json({ msg: 'invalid login' });
+                return res.status(400).json({ msg: 'Invalid Login,Check Your Credentials' });
             }
 
             const payload = {
@@ -51,12 +52,14 @@ router.post('/', [
                     id: user.id
                 }
             }
-            jwt.sign(payload, config.get('jwtSecret'), {
-                expiresIn: 3600
-            }, (err, token) => {
-                if (err) throw err;
-                res.json({ token });
-            }
+            jwt.sign(payload,
+                config.get('jwtSecret'),
+                {
+                    expiresIn: 3600
+                }, (err, token) => {
+                    if (err) throw err;
+                    res.json({ token });
+                }
             );
 
         } catch (err) {

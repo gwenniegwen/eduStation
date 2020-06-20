@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect} from "react";
+import React, {useRef, useState} from "react";
 import openSocket from 'socket.io-client';
 import API from "../utils/API";
 

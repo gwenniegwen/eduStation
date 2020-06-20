@@ -7,7 +7,7 @@ const app = express();
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(express.json({ extended: false }));
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
@@ -19,16 +19,16 @@ if (process.env.NODE_ENV === "production") {
 //Socket.io
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
-io.on('connection', function(socket){
+io.on('connection', function (socket) {
   console.log('a user connected');
-  socket.on('disconnect', function(){
+  socket.on('disconnect', function () {
     console.log('User Disconnected');
   });
-  socket.on('example_message', function(msg){
+  socket.on('example_message', function (msg) {
     io.sockets.emit('example_message', msg);
   });
-  socket.on('notification',function(msg){
-    console.log("you got a notification: "+msg );
+  socket.on('notification', function (msg) {
+    console.log("you got a notification: " + msg);
   })
 });
 
@@ -36,9 +36,9 @@ io.on('connection', function(socket){
 // Connect to the Mongo DB
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/edustation";
 mongoose.connect(MONGODB_URI, {
-  useNewUrlParser: true, 
+  useNewUrlParser: true,
   useFindAndModify: false,
-  useUnifiedTopology: true 
+  useUnifiedTopology: true
 });
 
 
@@ -46,7 +46,7 @@ mongoose.connect(MONGODB_URI, {
 // Define API routes here
 app.use(routes);
 
-app.use('/api/users', require ('./routes/api/users'));
+app.use('/api/users', require('./routes/api/users'));
 app.use('/api/auth', require('./routes/api/auth'));
 
 // Send every other request to the React app

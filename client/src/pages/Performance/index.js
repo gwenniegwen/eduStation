@@ -25,11 +25,21 @@
 
 // export default Performance;
 
-import React, { useReducer, useRef } from "react";
+import React, { useReducer, useRef, useEffect, useContext } from "react";
+import AuthContext from '../../context/auth/authContext';
 import "./style.css"
 // import Emoji from "react-emoji-render";
 
 function Performance() {
+ 
+  //authorize user for each page//
+  const authContext = useContext(AuthContext);
+  useEffect(()=> {
+    authContext.loadUser();
+   //eslint-disable-next-line
+  }, []);
+  
+  
   const inputRef = useRef();
   const [grades, dispatch] = useReducer((state, action) => {
     switch (action.type) {
@@ -148,7 +158,7 @@ function Performance() {
         </button>
       </form>
       <h4 i class="fa fa-list-ul">
-        >My Todo List:
+        My Todo List:
       </h4>
       <ul className="list-group">
         {grades.map((grades, index) => (

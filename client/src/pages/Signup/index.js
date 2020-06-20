@@ -2,7 +2,7 @@ import React from "react";
 import Signup from "../../components/Forms/Signup"
 // import './style.css'
 
-function Signin(){
+function Signup(){
     
     return (
         <div className="signin-container">
@@ -11,4 +11,4 @@ function Signin(){
     );
 }
 
-export default Signin
+export default Signup
