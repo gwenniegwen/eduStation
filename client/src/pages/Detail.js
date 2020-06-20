@@ -1,18 +1,36 @@
-import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
-import { Input, TextArea, FormBtn } from "../components/Form";
+import React, { useEffect, useState, useRef } from "react";
+import { useParams } from "react-router-dom";
 import { useHistory } from 'react-router'
 import DetailPost from "../components/DetailPost"
 import CommentForm from "../components/Forms/CommentForm"
+import openSocket from 'socket.io-client';
 import API from "../utils/API";
 import "../index.css";
 
+let listenTo = "";
+if (process.env.NODE_ENV === "production") {
+  listenTo = window.location.hostname;
+}
+else{
+  listenTo = "http://localhost:3001/";
+}
+
+const socket = openSocket(listenTo);
+
 function Detail(props) {
-  const [content, setContent] = useState({})
-  // When this component mounts, grab the book with the _id of props.match.params.id
+  const [content, setContent] = useState({});
+  const [comments, setComments]=useState([]);
+
+  // When this component mounts, grab the post with the _id of props.match.params.id
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
-  const {id} = useParams()
+  const {id} = useParams();
+  const nameRef = useRef();
+  const commentRef = useRef();
+
+  socket.on('reload', function(msg){
+    loadComments();
+  });
+
   useEffect(() => {
     if(props.where === "announcements") {
       API.getAnnouncement(id)
@@ -23,9 +41,28 @@ function Detail(props) {
       .then(res => setContent(res.data))
       .catch(err => console.log(err));
     };
-  }, [])
+    loadComments();
+    socket.emit('join', id);
+  }, []);
+
+  function loadComments(){
+    API.getComments(id)
+    .then(res => setComments(res.data))
+    .catch(err=>console.log(err));
+  }
+
   function handleFormSubmit(e){
     e.preventDefault();
+    API.saveComment({
+      user: nameRef.current.value,
+      content: commentRef.current.value,
+      postID: id
+    }).then(res => {
+      loadComments();
+      nameRef.current.value="";
+      commentRef.current.value="";
+      socket.emit('reload',id);
+    });
   }
 
   const { push } = useHistory()
@@ -42,14 +79,15 @@ function Detail(props) {
         </div>
         <div className="row justify-content-md-center">
           <div className="column content-details">
-              <p className="content-text">
-                {content.content}
-              </p>
+              {props.where==="announcements" ? (
+                <p className="content-text">{content.content}</p>
+              ):(<div></div>)}
           </div>
         </div>
-        <DetailPost />
-        <DetailPost />
-        <CommentForm handleFormSubmit= {handleFormSubmit}/>
+        {comments.map(data=>(
+          <DetailPost key={data._id} user={data.user} content={data.content} date={data.date}/>
+        ))}
+        <CommentForm handleFormSubmit={handleFormSubmit} nameRef={nameRef} commentRef={commentRef}/>
         <div className="row">
           <div className="column" size="md-2">
             <button className="return-to-announcements btn btn-outline-light" type="button"

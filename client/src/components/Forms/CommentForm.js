@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-function CommentForm({ handleFormSubmit }) {
+function CommentForm({ handleFormSubmit, nameRef, commentRef }) {
 
     return (
         <div className="container top-container">
@@ -12,11 +12,11 @@ function CommentForm({ handleFormSubmit }) {
                         <div className="form-text">
                             <div className="form-group">
                                 <label htmlFor="labelUsername" className="commentLabel">Username</label> <br />
-                                <input type="text" className=" form-control userName" placeholder="Enter Name" />
+                                <input type="text" className="form-control userName" ref={nameRef}  placeholder="Enter Name" />
                             </div>
                             <div className="form-group">
                                 <label htmlFor="labelEventDate" className="commentLabel">Comment</label>
-                                <textarea className="textArea form-control comment"  placeholder="Share your thoughts!" />
+                                <textarea className="textArea form-control comment" ref={commentRef} placeholder="Share your thoughts!" />
                             </div>
                         </div>
                         <div className="button-row addeventrow justify-content-md-center">

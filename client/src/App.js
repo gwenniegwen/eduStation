@@ -10,7 +10,6 @@ import Detail from "./pages/Detail";
 import NotFound from "./pages/NotFound";
 import Performance from './pages/Performance';
 import Navbar from './components/Navbar';
-import Forum from './pages/ForumDemo';
 
 
 function App() {
@@ -23,7 +22,6 @@ function App() {
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/calendar" component={Calendar} />
                     <Route exact path="/signup" component={Signup} />
-                    <Route exact path="/forum" component={Forum} />
                     <Route exact path="/performance" component={Performance} />
                     <Route exact path="/announcements">
                         <Announcements />

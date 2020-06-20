@@ -3,15 +3,30 @@ import './style.css'
 import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import AddEvent from "../../components/Forms/AddEvent"
+import openSocket from 'socket.io-client';
 import API from '../../utils/API'
 
+let listenTo = "";
+if (process.env.NODE_ENV === "production") {
+  listenTo = window.location.hostname;
+}
+else{
+  listenTo = "http://localhost:3001/";
+}
+
+const socket = openSocket(listenTo);
 
 // Previous Event Add attempt not working
 function Calendar() {
-  const [calEvents, setCalEvents] =useState([{}]);
-  
+  const [calEvents, setCalEvents] = useState([{ }]);
+
+  socket.on('reload', function(msg){
+    loadEventToCal();
+  });
+
   useEffect(() => {
     loadEventToCal();
+    socket.emit('join', 'calendar');
   }, []);
 
   const eventRef = useRef();
@@ -30,6 +45,7 @@ function Calendar() {
       startRef.current.value = "";
       endRef.current.value = "";
       loadEventToCal();
+      socket.emit('reload','calendar');
     })
     .catch(err => console.log(err));
   }
