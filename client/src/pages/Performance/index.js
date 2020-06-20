@@ -1,11 +1,10 @@
 import React, { useReducer, useRef } from "react";
 import AddEmoji from "../../components/Emoji/Emoji";
-import API from '../../utils/API'
+import API from "../../utils/API";
 import "../Performance/style.css";
 // import "../Calendar/style.css";
 // import Calendar from "../Calendar/index.js";
 // import Emoji from "react-emoji-render";
-
 
 //pass the emoji from Emoji component to dispatch on line 44 in Performance
 //pass grades as a prop into Calendar compnent
@@ -54,7 +53,7 @@ function Performance() {
   return (
     <div className="containerPerformance text-center">
       <div className="titleP">
-        <h1 className="h1P" >Performance</h1>
+        <h1 className="h1P">Performance</h1>
         <h2 className="h2P">in this week!</h2>
         {/* <h2>{ today }</h2> */}
       </div>
@@ -130,7 +129,7 @@ function Performance() {
         <input
           className="form-control"
           ref={inputRef}
-          placeholder="Share how your kids done this week!"
+          placeholder="Share how the kid has done this week!"
         />
 
         <button
@@ -138,7 +137,7 @@ function Performance() {
           className="btn btn-outline-light justify-content-md-center addEventButton"
           type="submit"
         >
-          Share with the teacher!
+          Let's share!
         </button>
       </form>
       <h4>Post:</h4>
@@ -154,7 +153,7 @@ function Performance() {
               className="btn btn-outline-light justify-content-md-center addEventButtonRemove"
               onClick={() => dispatch({ type: "remove", index })}
             >
-              X Remove
+              Great!
             </button>
           </li>
         ))}
