@@ -1,6 +1,6 @@
 import React from "react";
 
-function AddEvent({ addEventToCal, deleteMode ,eventRef, startRef, endRef }) {
+function AddEvent({ addEventToCal, deleteMode ,eventRef, startRef, endRef}) {
   return (
     <div className="container top-container">
       <div className="row justify-content-md-center">
