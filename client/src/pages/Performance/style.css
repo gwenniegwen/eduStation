@@ -1,106 +1,59 @@
 /* Chinami */
-/* bodyP {
-    margin: 0;
-    padding: 0;
-    font-family: 'Architects Daughter', cursive;
-    min-width: 1280px;
+/* .body {
     background-color: #1daafc;
-  }
-  
-  ul {
-    list-style: none;
-  }
-  
-  h1 {
-    font-family: 'Architects Daughter', cursive;
-    font-size: 30px;
-    font-weight: 400;
-    color: white;
-  }
-  
-  h2,
-  h3 {
-    font-family: 'Architects Daughter', cursive;;
-    color: #2b546a;
-    font-weight: 300;
   } */
-  
-  /* h2 {
-    font-size: 20px;
-    margin-top: 8px;
-  }
-  
-  h3 {
-    font-size: 15px;
-    border-bottom: 1px solid #e1e6ec;
-    line-height: 64px;
-    margin-bottom: 40px;
-  }
-  
-  .header {
-    height: 60px;
-    border-bottom: 1px solid #eee;
-  } */
-  
-  /* .header-logo {
-    height: 60px;
-    width: 60px;
-    background-color: #2b546a;
-    float: left;
-    text-align: center;
-  }
-  
-  .header-logo img {
-    width: 28px;
-    padding-top: 16px;
-  } */
-  
-  /* .main-wrapper {
-    background-color: #f4fafa;
-  } */
-  
-  /* .main {
+
+.containerPerformance {
+  max-height: 200%;
+  font-family: "Architects Daughter", cursive;
+  background-color: #1daafc;
+  margin-bottom: 0;
+  height: 735px;
+
+}
+
+ul {
+  list-style: none;
+  margin-bottom: 0;
+}
+.titleP {
+  padding-top: 20px;
+}
+.h1P {
+  font-family: "Architects Daughter", cursive;
+  font-size: 30px;
+  font-weight: 400;
+  color: white;
+}
+
+.h2P,
+.h3P {
+  font-family: "Architects Daughter", cursive;
+  color: #2b546a;
+  font-weight: 300;
+}
+
+.h2P {
+  font-size: 20px;
+  margin-top: 8px;
+}
+
+.h3P {
+  font-size: 15px;
+  border-bottom: 1px solid #e1e6ec;
+  line-height: 64px;
+  margin-bottom: 40px;
+}
+
+
+/* .main {
     max-width: 1040px;
     margin: 0 auto;
     margin-top: -100px;
     padding: 96px 0;
   } */
-  
-  /* .lesson-container {
-    margin-top: 96px;
-  }
-  
-  .lesson-card {
-    display: inline-block;
-    width: 22.5%;
-    margin-right: 24px;
-    text-align: center;
-    box-shadow: 0 0 6px #e8e8e8;
-    background-color: #fff;
-    cursor: pointer;
-  }
-  
-  .lesson-item {
-    border-radius: 4px;
-    padding: 48px 0 64px;
-  }
-  
-  .lesson-item img {
-    width: 126px;
-  }
-  
-  .lesson-item p {
-    color: #2b546a;
-  }
-  
-  .modal {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-  }
+
+
   
   .modal-inner {
     position: absolute;
@@ -208,95 +161,36 @@
     border-radius: 3px;
   }
   
-  .footer {
-    padding: 80px 0;
-  }
-  
-  .footer-inner {
-    max-width: 1040px;
-    margin: 0 auto;
-  }
-  
-  .footer-logo {
-    display: inline-block;
-  }
-  
-  .footer-logo img {
-    height: 20px;
-  }
-  
-  .footer-logo p {
-    color: #b1c0c0;
-    font-size: 12px;
-  }
-  
-  .footer-inner ul {
-    float: right;
-  }
-  
-  .footer-inner li {
-    color: #2b546a;
-    display: inline-block;
-    padding-left: 16px;
-  }
-  .App {
-    text-align: center;
-  }
-  
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-    height: 40vmin;
-    pointer-events: none;
-  }
-  
-  .App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
-  }
-  
-  .App-link {
-    color: #61dafb;
-  }
-  
-  @keyframes App-logo-spin {
-    from {
-      transform: rotate(0deg);
-    }
-    to {
-      transform: rotate(360deg);
-    }
-  } */
-   .table {
-     background-color: white;
-     border-radius: 3px;
-     border-color: none;
-   }
-   .addEventButton {
-    border-radius: 25px;
-    font-family: 'Architects Daughter', cursive;
-    margin-top: 20px;
-  }
-   .addEventButtonRemove {
-    border-radius: 25px;
-    font-family: 'Architects Daughter', cursive;
-  }
 
-  .addEventButton:hover {
-    background-color: #f1b34b;
-  }
-  .addEventButtonRemove:hover {
-    background-color: #f1b34b;
-  }
+.table {
+  background-color: white;
+  border-radius: 3px;
+  border-color: none;
+}
+.addEventButton {
+  border-radius: 25px;
+  font-family: "Architects Daughter", cursive;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.addEventButtonRemove {
+  border-radius: 25px;
+  font-family: "Architects Daughter", cursive;
+  cursor: pointer;
+}
 
-  .btn btn-info {
+.addEventButton:hover {
+  background-color: #f1b34b;
+  cursor: pointer;
+}
+.addEventButtonRemove:hover {
+  background-color: #f1b34b;
+  cursor: pointer;
+}
+
+/* .btn btn-info {
     background-color: #f1b34b;
   }
   .btnEmoji btn-info:hover{
     background-color: #f1b34b;
-  } 
+  }  */
