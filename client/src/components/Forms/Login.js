@@ -1,14 +1,14 @@
 import React, {useState, useContext, useEffect} from "react";
 import AuthContext from '../../context/auth/authContext';
-import AlertContext from '../../context/alert/alertContext';
+// import AlertContext from '../../context/alert/alertContext';
 import '../../context/types'
 
 
 function Login(props) {
-  const alertContext = useContext(AlertContext);
+  // const alertContext = useContext(AlertContext);
   const authContext = useContext(AuthContext);
 
-  const {setAlert } = alertContext;
+  // const {setAlert } = alertContext;
 
   const { login, error, clearErrors, isAuthenticated } = authContext
 
@@ -18,7 +18,7 @@ function Login(props) {
       props.history.push('/')
     }
     if (error === 'Invalid Login,Check Your Credentials') {
-      setAlert(error, 'danger')
+     console.log(error)
       clearErrors();
     }
     //eslint-disable-next-line
@@ -39,7 +39,7 @@ function Login(props) {
   const onSubmit = e => {
     e.preventDefault();
    if(email === '' || password === ''){
-     setAlert('Email and Password are Required', 'danger');
+     console.log(error);
    } else {
      login({
        email,
@@ -48,13 +48,11 @@ function Login(props) {
     }
   }
   return (
-    <form onSubmit={onSubmit}>
-
     <div className="container">
     <div className="row justify-content-md-center">
       <div className="col-md-4 col-md-offset-4">
         <h2 className="formName">Log In</h2>
-        <form className="loginForm col-md-offset-4">
+        <form onSubmit={onSubmit} className="loginForm col-md-offset-4">
         <div className="form-text">
           <div className="form-group">
             <label htmlfor="exampleInputEmail1" className="authlabel">Email address</label>
@@ -83,7 +81,7 @@ function Login(props) {
           </div>
     </div>
     </div>
-    </form>
+ 
   );
 }
 

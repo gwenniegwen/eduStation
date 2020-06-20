@@ -34,7 +34,7 @@ export default {
 
   //Comment calls
   getComments: function(id) {
-    return axios.get("/api/comment/post" + id);
+    return axios.get("/api/comment/post/"+id);
   },
   getComment: function(id) {
     return axios.get("/api/comment/" + id);

@@ -4,7 +4,18 @@ import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import AuthContext from '../../context/auth/authContext';
 import AddEvent from "../../components/Forms/AddEvent"
+import openSocket from 'socket.io-client';
 import API from '../../utils/API'
+
+let listenTo = "";
+if (process.env.NODE_ENV === "production") {
+  listenTo = window.location.hostname;
+}
+else{
+  listenTo = "http://localhost:3001/";
+}
+
+const socket = openSocket(listenTo);
 
 // Previous Event Add attempt not working
 function Calendar() {
@@ -18,8 +29,13 @@ function Calendar() {
 
   const [calEvents, setCalEvents] = useState([{ }]);
 
+  socket.on('reload', function(msg){
+    loadEventToCal();
+  });
+
   useEffect(() => {
     loadEventToCal();
+    socket.emit('join', 'calendar');
   }, []);
 
   const eventRef = useRef();
@@ -38,6 +54,7 @@ function Calendar() {
       startRef.current.value = "";
       endRef.current.value = "";
       loadEventToCal();
+      socket.emit('reload','calendar');
     })
     .catch(err => console.log(err));
   }
@@ -72,9 +89,9 @@ function Calendar() {
         events= {calEvents}
         eventClick={e=>{e.jsEvent.preventDefault();if(e.event.url){window.location.replace(e.event.url)}}}
         />
-</div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default Calendar
+export default Calendar;

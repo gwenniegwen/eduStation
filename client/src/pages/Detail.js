@@ -1,25 +1,37 @@
-import React, { useEffect, useState, useContext } from "react";
-import { Link, useParams } from "react-router-dom";
-import { Col, Row, Container } from "../components/Grid";
-import { Input, TextArea, FormBtn } from "../components/Form";
-import Jumbotron from "../components/Jumbotron";
+import React, { useEffect, useState, useRef } from "react";
+import { useParams } from "react-router-dom";
+import { useHistory } from 'react-router'
+import DetailPost from "../components/DetailPost"
+import CommentForm from "../components/Forms/CommentForm"
+import openSocket from 'socket.io-client';
 import API from "../utils/API";
 import AuthContext from '../context/auth/authContext';
 import "../index.css";
 
+let listenTo = "";
+if (process.env.NODE_ENV === "production") {
+  listenTo = window.location.hostname;
+}
+else{
+  listenTo = "http://localhost:3001/";
+}
+
+const socket = openSocket(listenTo);
+
 function Detail(props) {
+  const [content, setContent] = useState({});
+  const [comments, setComments]=useState([]);
 
-  //authorize user for each page//
-  const authContext = useContext(AuthContext);
-  useEffect(()=> {
-    authContext.loadUser();
-  //eslint-disable-next-line
-}, []);
-
-  const [content, setContent] = useState({})
-  // When this component mounts, grab the annoucement with the _id of props.match.params.id
+  // When this component mounts, grab the post with the _id of props.match.params.id
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
-  const {id} = useParams()
+  const {id} = useParams();
+  const nameRef = useRef();
+  const commentRef = useRef();
+
+  socket.on('reload', function(msg){
+    loadComments();
+  });
+
   useEffect(() => {
     if(props.where === "announcements") {
       API.getAnnouncement(id)
@@ -30,57 +42,63 @@ function Detail(props) {
       .then(res => setContent(res.data))
       .catch(err => console.log(err));
     };
-  }, [])
-  function handleFormSubmit(e){
-    e.preventDefault();
+    loadComments();
+    socket.emit('join', id);
+  }, []);
+
+  function loadComments(){
+    API.getComments(id)
+    .then(res => setComments(res.data))
+    .catch(err=>console.log(err));
   }
 
+  function handleFormSubmit(e){
+    e.preventDefault();
+    API.saveComment({
+      user: nameRef.current.value,
+      content: commentRef.current.value,
+      postID: id
+    }).then(res => {
+      loadComments();
+      nameRef.current.value="";
+      commentRef.current.value="";
+      socket.emit('reload',id);
+    });
+  }
+
+  const { push } = useHistory()
+
   return (
-      <Container fluid>
-        <Row>
-          <Col size="md-12">
-            <Jumbotron>
-              <h1>
+    <div className="detail-container">
+        <div className="container detail-info">
+        <div className="row justify-content-md-center">
+        <div className="col-md-4 col-md-offset-4">
+              <h1 className="content-title">
                 {content.title} 
               </h1>
-            </Jumbotron>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-10 md-offset-1">
-            <article>
-              <h1>Content</h1>
-              <p>
-                {content.content}
-              </p>
-            </article>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-2">
-            <Link to={"/"+props.where}>← Back to {props.where}</Link>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="2">
-          <form className="commentForm">
-              <Input
-                name="username"
-                placeholder="Name"
-              />
-              <TextArea
-                name="content"
-                placeholder="Write what you think!"
-              />
-              <FormBtn comment
-                onClick={handleFormSubmit}
-              >
-                Comment
-              </FormBtn>
-            </form>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </div>
+        <div className="row justify-content-md-center">
+          <div className="column content-details">
+              {props.where==="announcements" ? (
+                <p className="content-text">{content.content}</p>
+              ):(<div></div>)}
+          </div>
+        </div>
+        {comments.map(data=>(
+          <DetailPost key={data._id} user={data.user} content={data.content} date={data.date}/>
+        ))}
+        <CommentForm handleFormSubmit={handleFormSubmit} nameRef={nameRef} commentRef={commentRef}/>
+        <div className="row">
+          <div className="column" size="md-2">
+            <button className="return-to-announcements btn btn-outline-light" type="button"
+            onClick={() => push("/" + props.where)}> ← Back to {props.where}
+            </button>
+          </div>
+        </div>
+        </div>
+        </div>
+  
     );
   }
 

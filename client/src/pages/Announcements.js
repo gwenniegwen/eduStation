@@ -2,12 +2,24 @@ import React, { useState, useEffect, useContext } from "react";
 import AuthContext from '../context/auth/authContext';
 import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
+import openSocket from 'socket.io-client';
 import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
 import "../index.css"
+
+let listenTo = "";
+if (process.env.NODE_ENV === "production") {
+  listenTo = window.location.hostname;
+}
+else{
+  listenTo = "http://localhost:3001/";
+}
+
+const socket = openSocket(listenTo);
+
 
 function Announcements() {
 
@@ -22,9 +34,14 @@ useEffect(()=> {
   const [announcements, setAnnouncements] = useState([])
   const [formObject, setFormObject] = useState({})
 
+  socket.on('reload', function(msg){
+    loadAnnouncements();
+  });
+
   // Load all announcements and store them with setAnnouncements
   useEffect(() => {
-    loadAnnouncements()
+    loadAnnouncements();
+    socket.emit('join', 'announcements');
   }, [])
 
   // Loads all announcements and sets them to announcements
@@ -57,7 +74,10 @@ useEffect(()=> {
         content: formObject.content,
         date: formObject.date
       })
-        .then(res => loadAnnouncements())
+        .then(res => {
+          loadAnnouncements();
+          socket.emit('reload','announcements');
+        })
         .catch(err => console.log(err));
     }
 
