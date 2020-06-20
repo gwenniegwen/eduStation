@@ -1,69 +1,53 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 
-## Available Scripts
+  <img src="" alt="Edustation"/>
 
-In the project directory, you can run:
+## Edustation
 
-### `npm start`
+<table>
+<tr>
+<td>
+  A React App that is here for communication tool of the school, between teachers and parents.       ............more detail.
+</td>
+</tr>
+</table>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Take it for a spin.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Here is a working live demo : https://murmuring-oasis-74308.herokuapp.com/
 
-### `npm test`
+## Contributions
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To fix a bug or enhance an existing module, follow these steps:
 
-### `npm run build`
+- Fork the repo
+- Create a new branch (`git checkout -b improve-feature`)
+- Make the appropriate changes in the files
+- Add changes to reflect the changes made
+- Commit your changes (`git commit -am 'Improve feature'`)
+- Push to the branch (`git push origin improve-feature`)
+- Create a Pull Request
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Built with
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- [React](https://reactjs.org/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [MongoDB](https://www.mongodb.com/)
 
-### `npm run eject`
+- [Node](https://nodejs.org/en/)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [FullCalendar](https://fullcalendar.io/)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [Emoji-Mart](https://github.com/missive/emoji-mart)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+-
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Team
 
-## Learn More
+<a href="https://github.com/kevinmhall8">Kevin Hall</a>
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<a href="https://github.com/yechan96">Ye Chan Lee</a>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<a href="https://github.com/gwenniegwen">Gwen Thomas</a>
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-
+<a href="https://github.com/chinami0420">Chinami Iihama</a>
