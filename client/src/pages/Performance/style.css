@@ -1,36 +1,35 @@
 /* Chinami */
-/* bodyP {
-    margin: 0;
-    padding: 0;
+  .containerP {
+    
     font-family: 'Architects Daughter', cursive;
-    min-width: 1280px;
+   
     background-color: #1daafc;
-  }
+  } 
   
-  ul {
+   /* ul {
     list-style: none;
-  }
+  } */
   
-  h1 {
+  .h1P {
     font-family: 'Architects Daughter', cursive;
     font-size: 30px;
     font-weight: 400;
     color: white;
   }
   
-  h2,
-  h3 {
+  .h2P,
+  .h3P {
     font-family: 'Architects Daughter', cursive;;
     color: #2b546a;
     font-weight: 300;
-  } */
+  } 
   
-  /* h2 {
+  .h2P {
     font-size: 20px;
     margin-top: 8px;
   }
   
-  h3 {
+  .h3P {
     font-size: 15px;
     border-bottom: 1px solid #e1e6ec;
     line-height: 64px;
@@ -40,7 +39,7 @@
   .header {
     height: 60px;
     border-bottom: 1px solid #eee;
-  } */
+  }
   
   /* .header-logo {
     height: 60px;

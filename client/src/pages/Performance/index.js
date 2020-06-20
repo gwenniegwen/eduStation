@@ -2,7 +2,7 @@ import React, { useReducer, useRef } from "react";
 import AddEmoji from "../../components/Emoji/Emoji";
 import API from '../../utils/API'
 import "./style.css";
-import "../Calendar/style.css";
+// import "../Calendar/style.css";
 // import Calendar from "../Calendar/index.js";
 // import Emoji from "react-emoji-render";
 
@@ -52,10 +52,10 @@ function Performance() {
   };
 
   return (
-    <div className="container text-center bodyP">
+    <div className="containerP text-center">
       <div>
-        <h1>Performance</h1>
-        <h2>in this week!</h2>
+        <h1 className="h1P" >Performance</h1>
+        <h2 className="h2P">in this week!</h2>
         {/* <h2>{ today }</h2> */}
       </div>
 
@@ -63,7 +63,7 @@ function Performance() {
         className="table table-bordered"
         style={{ marginLeft: 80, marginRight: 170, width: "80%" }}
       >
-        <thead>
+        <thead className="theadP">
           <tr>
             <th scope="col" style={{ width: 150 }}>
               Monday
