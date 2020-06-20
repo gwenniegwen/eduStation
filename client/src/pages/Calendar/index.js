@@ -19,7 +19,7 @@ const socket = openSocket(listenTo);
 // Previous Event Add attempt not working
 function Calendar() {
   const [calEvents, setCalEvents] = useState([{ }]);
-
+  let test = true;
   socket.on('reload', function(msg){
     loadEventToCal();
   });
@@ -78,7 +78,16 @@ function Calendar() {
         weekends={false}
         editable= {true}
         events= {calEvents}
-        eventClick={e=>{e.jsEvent.preventDefault();if(e.event.url){window.location.replace(e.event.url)}}}
+        eventClick={e=>{
+          e.jsEvent.preventDefault();
+          if(test){
+            if(e.event.url){
+              window.location.replace(e.event.url)
+            }
+          }else{
+            console.log("clicked");
+          }
+        }}
         />
       </div>
     </div>
