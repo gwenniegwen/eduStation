@@ -49,6 +49,16 @@ function Detail(props) {
     API.getComments(id)
     .then(res => setComments(res.data))
     .catch(err=>console.log(err));
+    console.log(comments);
+  }
+
+  function deleteComment(id){
+    API.deleteComment(id)
+    .then(res => {
+      loadComments();
+      socket.emit('join', id);
+    })
+    .catch(err=>console.log(err));
   }
 
   function handleFormSubmit(e){
@@ -85,7 +95,7 @@ function Detail(props) {
           </div>
         </div>
         {comments.map(data=>(
-          <DetailPost key={data._id} user={data.user} content={data.content} date={data.date}/>
+          <DetailPost key={data._id} id={data._id} user={data.user} content={data.content} date={data.date} deleteComment={deleteComment}/>
         ))}
         <CommentForm handleFormSubmit={handleFormSubmit} nameRef={nameRef} commentRef={commentRef}/>
         <div className="row">
