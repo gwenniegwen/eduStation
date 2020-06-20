@@ -56,7 +56,7 @@ function Detail(props) {
     API.deleteComment(id)
     .then(res => {
       loadComments();
-      socket.emit('join', id);
+      socket.emit('reload', id);
     })
     .catch(err=>console.log(err));
   }
