@@ -45,6 +45,9 @@ export default {
   saveComment: function(commentData) {
     return axios.post("/api/comment", commentData);
   },
+  deleteAllComments: function(id){
+    return axios.delete("/api/comment/post/"+id);
+  },
 
   //Performance calls
   getPerformances: function() {
