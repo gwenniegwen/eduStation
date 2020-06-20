@@ -45,8 +45,10 @@ function Announcements() {
   // Deletes an announcement from the database with a given id, then reloads announcements from the db
   function deleteAnnouncement(id) {
     API.deleteAnnouncement(id)
-      .then(res => loadAnnouncements())
+      .then(res => {loadAnnouncements();socket.emit('reload','announcements');})
       .catch(err => console.log(err));
+    API.deleteAllComments(id)
+    .catch(err => console.log(err));
   }
 
   // Handles updating component state when the user types into the input field

@@ -1,6 +1,6 @@
 import React from "react";
 
-function AddEvent({ addEventToCal, eventRef, startRef, endRef }) {
+function AddEvent({ addEventToCal, deleteMode ,eventRef, startRef, endRef }) {
   return (
     <div className="container top-container">
       <div className="row justify-content-md-center">
@@ -45,6 +45,7 @@ function AddEvent({ addEventToCal, eventRef, startRef, endRef }) {
               </div>
             </div>
             <div className="button-row addeventrow justify-content-md-center">
+              <div className="column">
               <button
                 type="button"
                 className="btn btn-outline-light justify-content-md-center addEventButton"
@@ -52,6 +53,14 @@ function AddEvent({ addEventToCal, eventRef, startRef, endRef }) {
               >
                 Add Event
               </button>
+              <button
+                type="button"
+                className="btn btn-outline-light justify-content-md-center deleteEventButton"
+                onClick={(e) => deleteMode(e)}
+              >
+                Delete Event
+              </button>
+              </div>
             </div>
           </form>
         </div>
