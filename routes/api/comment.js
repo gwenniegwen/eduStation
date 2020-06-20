@@ -3,7 +3,6 @@ const commentController = require("../../controllers/commentController");
 
 // Matches with "/api/comment"
 router.route("/")
-
   .post(commentController.create);
 
 router.route("/post/:id")
