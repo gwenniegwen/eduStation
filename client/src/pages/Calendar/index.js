@@ -36,7 +36,6 @@ function Calendar() {
   function deleteMode(e){
     e.preventDefault();
     isDeleting = !isDeleting;
-    console.log(isDeleting);
   }
 
   function deleteEvent(id){
@@ -96,6 +95,7 @@ function Calendar() {
         events= {calEvents}
         eventClick={e=>{
           e.jsEvent.preventDefault();
+          console.log(isDeleting);
           if(!isDeleting){
             if(e.event.url){
               window.location.replace(e.event.url);

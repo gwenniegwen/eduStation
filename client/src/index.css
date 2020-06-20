@@ -153,7 +153,8 @@ hr {
 padding-top: 50px;
 background-color: #1daafc;
 color: white;
-height: 130vh;
+min-height: 100vh;
+height: 100%;
 }
 
 .content-title {
