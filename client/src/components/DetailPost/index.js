@@ -1,4 +1,5 @@
 import React from 'react'
+import DeleteBtn from "../DeleteBtn";
 
 
 function DetailPost({user, content, date}) {
@@ -13,7 +14,11 @@ function DetailPost({user, content, date}) {
         <div className="detailPostUsername detailText">{user}</div></div>
         <div className="col">
         <div className="detailPostDate detailText">{date}</div></div></div><hr className="postBreak"/>
+        <DeleteBtn className="DetailPostDelete pull-right" 
+        // onClick={() => deleteAnnouncement(announcement._id)} 
+        />
         <div className="detailPostContent detailText">{content}</div>
+        <br />
         </div>
         </div>
         </div>

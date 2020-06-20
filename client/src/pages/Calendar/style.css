@@ -22,6 +22,7 @@
 .addEventButton {
   border-radius: 25px;
   font-family: 'Architects Daughter', cursive;
+  margin-bottom: 10px;
 }
 
 .eventButton {
@@ -46,13 +47,13 @@
   background-color:#f1b34b;
 }
 
-.leftButton {
+/* .leftButton {
   text-align: left;
 }
 
 .rightButton {
   text-align: right;
-}
+} */
 
 .calendar {
   background-color: #749877;
