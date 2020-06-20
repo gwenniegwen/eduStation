@@ -1,6 +1,6 @@
 import React from "react";
 
-function AddEvent({ addEventToCal, eventRef, startRef, endRef }) {
+function AddEvent({ addEventToCal, deleteMode ,eventRef, startRef, endRef }) {
   return (
     <div className="container top-container">
       <div className="row justify-content-md-center">
@@ -56,7 +56,7 @@ function AddEvent({ addEventToCal, eventRef, startRef, endRef }) {
               <button
                 type="button"
                 className="btn btn-outline-light justify-content-md-center deleteEventButton"
-                // onClick={(e) => deleteEventToCal(e)}
+                onClick={(e) => deleteMode(e)}
               >
                 Delete Event
               </button>
