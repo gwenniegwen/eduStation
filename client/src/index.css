@@ -134,8 +134,8 @@ border-radius: 25px;
 
 .detailText {
   color: white;
-  padding-right: 10px;
-  padding-left: 5px;
+  /* padding-right: 10px;
+  padding-left: 5px; */
 }
 
 .detailPostUsername {
@@ -147,10 +147,24 @@ border-radius: 25px;
   font-size: 14px;
 }
 
+.pagelinks {
+  display: flex;
+  align-items: center;
+  padding-right: 30px;
+}
+
 hr {
   border-top: 1px solid white;
 
 }
+
+.navbar-nav {
+  color: white;
+}
+
+.navbar-nav:hover { 
+      color: #f1b34b;
+  }
 
 .detail-container {
 padding-top: 50px;
@@ -163,7 +177,7 @@ height: 100%;
 .content-title {
 font-family: 'Architects Daughter', cursive;
 font-size: 60px;
-max-width: 500px;
+/* max-width: 500px; */
 color: white;
 text-align: center;
 }
@@ -171,13 +185,6 @@ text-align: center;
 .content-details {
   width: 360px;
 }
-
-/* max-width: 600px;
-
-  font-family: 'Architects Daughter', cursive;
-  font-size: 20px;
-  color: white;
-} */
 
 .content-text {
 font-family: 'Architects Daughter', cursive;

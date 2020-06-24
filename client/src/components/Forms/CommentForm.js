@@ -6,7 +6,7 @@ function CommentForm({ handleFormSubmit, nameRef, commentRef }) {
     return (
         <div className="container">
             <div className="row justify-content-md-center">
-                <div className="col-md-4 col-md-offset-4">
+                <div className="column">
                     <h2 className="formName commentFormName">Add a Comment</h2>
                     <form className="commentForm col-md-offset-4">
                         <div className="form-text">

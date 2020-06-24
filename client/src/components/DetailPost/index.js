@@ -6,7 +6,7 @@ function DetailPost({id, user, content, date, deleteComment}) {
 
     return (
         <div className="row justify-content-md-center">
-        <div className="col-md-4 col-md-offset-4">
+        <div className="column">
 
         <div className="detailPost content-text">
         <div className="row">
