@@ -24,6 +24,7 @@ function Detail(props) {
   // When this component mounts, grab the post with the _id of props.match.params.id
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
   const {id} = useParams();
+  const copyID = id;
   const nameRef = useRef();
   const commentRef = useRef();
 
@@ -56,7 +57,7 @@ function Detail(props) {
     API.deleteComment(id)
     .then(res => {
       loadComments();
-      socket.emit('reload', id);
+      socket.emit('reload', copyID);
     })
     .catch(err=>console.log(err));
   }
